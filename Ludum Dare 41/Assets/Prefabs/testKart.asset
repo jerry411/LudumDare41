@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb09099cd1627474ebc3c397b2b5efa6, type: 3}
   m_Name: testKart
   m_EditorClassIdentifier: 
-  thrust: -150
+  thrust: 15
