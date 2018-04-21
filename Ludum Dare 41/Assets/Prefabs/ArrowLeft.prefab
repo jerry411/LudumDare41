@@ -67,6 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93841fc5bd38ab447b04fc453b595622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitArea: {fileID: 0}
+  stats: {fileID: 0}
+  active: 0
+  isInHitArea: 0
+  isHit: 0
 --- !u!222 &222723881089446410
 CanvasRenderer:
   m_ObjectHideFlags: 1

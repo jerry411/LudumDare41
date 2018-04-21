@@ -88,8 +88,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitArea: {fileID: 0}
+  stats: {fileID: 0}
   active: 0
   isInHitArea: 0
+  isHit: 0
 --- !u!114 &114609283438369604
 MonoBehaviour:
   m_ObjectHideFlags: 1

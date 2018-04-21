@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ArrowState : MonoBehaviour
 {
-    Canvas hitArea;
+    public Canvas hitArea;
 
-    AccelerationCorrectArrows stats;
+    public AccelerationCorrectArrows stats;
 
     public bool active;
 
@@ -41,12 +41,25 @@ public class ArrowState : MonoBehaviour
         hitArea.GetComponent<HitArea>().arrowsInHitArea.Remove(gameObject);
     }
 
-    void Hit()
+    public void Hit(bool goodHit)
     {
-        isHit = true;
+        Debug.Log("HIT");
 
-        stats.AddToStreak();
-        stats.BreakMalus();
+        isHit = true;
+        active = false;
+        hitArea.GetComponent<HitArea>().arrowsInHitArea.Remove(gameObject);
+
+        if (goodHit)
+        {
+            stats.AddToStreak();
+            stats.BreakMalus();
+        }
+        else
+        {
+            stats.AddToStreak();
+            stats.BreakStreak();
+        }
+        
 
         //TODO: change color/fade
     }
