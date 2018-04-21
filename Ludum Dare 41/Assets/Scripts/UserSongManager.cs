@@ -28,9 +28,4 @@ public class UserSongManager : MonoBehaviour
 			//audioClips.Add(audioClipDir.audioClip)
 		}
 	}
-<<<<<<< HEAD
 }
-
-=======
-}
->>>>>>> ad7d860e7bd6f1ac8b36e66c8d23a2a49f9461d2
