@@ -5,6 +5,8 @@ using UnityEngine;
 public class ParallaxFloor : MonoBehaviour {
 
     public Camera cam;
+    public Transform[] roads;
+    private float viewZone
 
     private void Start()
     {
@@ -14,6 +16,6 @@ public class ParallaxFloor : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate ()
     {
-		
+		cam.vi
 	}
 }
