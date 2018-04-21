@@ -11,7 +11,9 @@ public class ArrowVisualiser : MonoBehaviour
     public GameObject arrowLeft;
     public GameObject arrowRight;
 
-    GameObject[] arrows;
+    public Canvas spawnArea;
+
+    GameObject[] arrows;   
 
     List<GameObject> activeArrows;
 
@@ -33,9 +35,22 @@ public class ArrowVisualiser : MonoBehaviour
         throw new System.NotImplementedException();
     }
 
-    public void displayArrow(int index)
+    public void spawnArrow(int index)
     {
-
         GameObject selectedArrow = arrows[index];
+
+        Vector3 spawnPosition = spawnArea.transform.position;
+
+        switch (index)
+        {
+            case 0: spawnPosition.y += 20; break;
+            case 1: spawnPosition.y += 40; break;
+            case 2: spawnPosition.y += 60; break;
+            case 3: spawnPosition.y += 80; break;
+        }
+
+        Instantiate(selectedArrow, spawnPosition, Quaternion.identity);
+
+        activeArrows.Add(selectedArrow);
     }
 }
