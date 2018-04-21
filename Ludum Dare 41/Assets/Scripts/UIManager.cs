@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class UIManager : MonoBehaviour {
@@ -34,5 +35,10 @@ public class UIManager : MonoBehaviour {
     public void ChangeVolume(float newValue)
     {
         AudioListener.volume = newValue;
+    }
+
+    public void LoadScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }

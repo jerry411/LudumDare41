@@ -8,20 +8,13 @@ public class ArrowGenerator : MonoBehaviour
 
     public AudioSource mainSongSource;
 
-    public GameObject arrowUp;
-    public GameObject arrowDown;
-    public GameObject arrowLeft;
-    public GameObject arrowRight;
-
-    GameObject[] arrows;
+    public ArrowVisualiser visualiser;      
 
 
     void Start ()
 	{
 	    processor.onBeat.AddListener(onBeatDetected);
-	    //processor.onSpectrum.AddListener(onSpectrum);
-
-	    arrows = new GameObject[] { arrowUp, arrowDown, arrowLeft, arrowRight };
+	    //processor.onSpectrum.AddListener(onSpectrum);	    
 
 	    mainSongSource.PlayDelayed(2);
 	}
@@ -30,10 +23,9 @@ public class ArrowGenerator : MonoBehaviour
     //Change the threshold parameter in the inspector to adjust the sensitivity
     void onBeatDetected()
     {
-
         Debug.Log(selectRandomArrow());
 
-        displayArrow(selectRandomArrow());
+        visualiser.displayArrow(selectRandomArrow());
     }
 
     //This event will be called every frame while music is playing
@@ -51,11 +43,5 @@ public class ArrowGenerator : MonoBehaviour
     int selectRandomArrow()
     {
         return Random.Range(0, 4);
-    }
-
-    void displayArrow( int index )
-    {
-        GameObject selectedArrow = arrows[index];
-
-    }
+    }  
 }
