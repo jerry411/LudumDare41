@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 224856565817474018}
   - component: {fileID: 222889166284646004}
   - component: {fileID: 114609283438369604}
+  - component: {fileID: 114128441630046676}
+  - component: {fileID: 50121117687677978}
   m_Layer: 5
   m_Name: ArrowDown
   m_TagString: Untagged
@@ -28,6 +30,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!50 &50121117687677978
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1425075822014418}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &114128441630046676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1425075822014418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93841fc5bd38ab447b04fc453b595622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitArea: {fileID: 0}
+  active: 0
+  isInHitArea: 0
 --- !u!114 &114609283438369604
 MonoBehaviour:
   m_ObjectHideFlags: 1

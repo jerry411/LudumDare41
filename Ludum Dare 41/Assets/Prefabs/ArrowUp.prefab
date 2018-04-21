@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224894458566391622}
   - component: {fileID: 222555630524732424}
   - component: {fileID: 114335311120450458}
+  - component: {fileID: 114998787783485056}
   m_Layer: 5
   m_Name: ArrowUp
   m_TagString: Untagged
@@ -55,6 +56,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114998787783485056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913597115130082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93841fc5bd38ab447b04fc453b595622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &222555630524732424
 CanvasRenderer:
   m_ObjectHideFlags: 1

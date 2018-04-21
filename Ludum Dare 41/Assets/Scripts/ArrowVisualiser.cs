@@ -17,26 +17,19 @@ public class ArrowVisualiser : MonoBehaviour
     GameObject[] arrows;   
 
     List<GameObject> activeArrows;
+    List<GameObject> allArrows;
 
     void Start ()
 	{
 	    arrows = new GameObject[] { arrowUp, arrowDown, arrowLeft, arrowRight };
 	    activeArrows = new List<GameObject>();
+	    allArrows = new List<GameObject>();
 	}
 	
 	void Update ()
 	{
-	    foreach (GameObject arrow in activeArrows)
-	    {
-	        MoveArrow(arrow);
-	    }
-	}
 
-    void MoveArrow(GameObject arrow)
-    {
-        float translation = Screen.width / 2f / 2f * Time.deltaTime;
-        arrow.transform.Translate(new Vector3(-translation, 0f, 0f));
-    }
+	}
 
     public void spawnArrow(int index)
     {
@@ -56,6 +49,8 @@ public class ArrowVisualiser : MonoBehaviour
 
         newArrow.transform.SetParent(GUI.transform, true);
 
+        newArrow.GetComponent<ArrowState>();
         activeArrows.Add(newArrow);
+        allArrows.Add(newArrow);
     }
 }
