@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class ControlAndScoreDetection : MonoBehaviour
 {
-    ArrowVisualiser visualiser;
+    public ArrowVisualiser visualiser;
 
-    AccelerationCorrectArrows stats;
+    public AccelerationCorrectArrows stats;
 
-    Canvas hitArea;
+    public Canvas hitArea;
 
 	void Start ()
 	{
@@ -18,6 +18,11 @@ public class ControlAndScoreDetection : MonoBehaviour
 
 	void Update ()
 	{
+	    if (!Input.anyKey)
+	    {
+            return;
+	    }
+
 	    GameObject leftMostArrow = GetLeftMostActiveArrow();
 
 	    if (leftMostArrow == null)
@@ -27,33 +32,56 @@ public class ControlAndScoreDetection : MonoBehaviour
 
 	    if (Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0)
 	    {
-                return;
+            return;
 	    }
 
-	    if (leftMostArrow.name == "ArrowUp")
+        switch (leftMostArrow.name)
 	    {
-	        
+	        case "ArrowUp":
+	            if (Input.GetAxis("Vertical") > 0)
+	            {
+	                leftMostArrow.GetComponent<ArrowState>().Hit(true);
+	            }
+	            else
+	            {
+	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
+                }
+	            break;
+	        case "ArrowDown":
+	            if (Input.GetAxis("Vertical") < 0)
+	            {
+	                leftMostArrow.GetComponent<ArrowState>().Hit(true);
+	            }
+	            else
+	            {
+	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
+	            }
+                break;
+	        case "ArrowLeft":
+	            if (Input.GetAxis("Horizontal") < 0)
+	            {
+	                leftMostArrow.GetComponent<ArrowState>().Hit(true);
+	            }
+	            else
+	            {
+	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
+	            }
+                break;
+	        case "ArrowRight":
+	            if (Input.GetAxis("Horizontal") > 0)
+	            {
+	                leftMostArrow.GetComponent<ArrowState>().Hit(true);
+	            }
+	            else
+	            {
+	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
+	            }
+                break;
 	    }
-
-	    if (leftMostArrow.name == "ArrowDown")
-	    {
-
-	    }
-
-	    if (leftMostArrow.name == "ArrowLeft")
-	    {
-
-	    }
-
-	    if (leftMostArrow.name == "ArrowRight")
-	    {
-
-	    }
-
-    }
+	}
 
     private GameObject GetLeftMostActiveArrow()
     {
-        return hitArea.GetComponent<HitArea>().arrowsInHitArea.OrderBy(x => x.transform.position.x).FirstOrDefault();       
+        return hitArea.GetComponent<HitArea>().arrowsInHitArea.OrderBy(x => x.transform.position.x).FirstOrDefault();
     }
 }
