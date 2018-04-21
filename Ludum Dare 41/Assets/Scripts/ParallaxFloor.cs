@@ -4,17 +4,61 @@ using UnityEngine;
 
 public class ParallaxFloor : MonoBehaviour {
 
-    public Camera cam;
+    public int leftIndex;
+    public int rightIndex;
     public Transform[] roads;
-    private float viewZone;
 
-    void Start()
+    public float bgSize;
+    public float viewZone = 10f;
+    public Camera cam;
+
+    private void Start()
     {
-        cam = GameObject.FindGameObjectWithTag("Camera").GetComponent<Camera>();
+        roads = new Transform[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            roads[i] = transform.GetChild(i);
+        }
+
+        cam = Camera.main;
+        leftIndex = 0;
+        rightIndex = roads.Length - 1;
     }
 
-    // Update is called once per frame
-    void FixedUpdate ()
+    public void ScrollLeft()
     {
-	}
+        int lastRight = rightIndex;
+        roads[rightIndex].position = new Vector3(roads[leftIndex].position.x - bgSize, -1, 0);
+        leftIndex = rightIndex;
+        rightIndex--;
+        if (rightIndex < 0)
+            rightIndex = roads.Length - 1;
+    }
+
+    public void ScrollRight()
+    {
+        int lastLeft = leftIndex;
+        roads[leftIndex].position = new Vector3(roads[rightIndex].position.x + bgSize, -1, 0)  ;
+
+        rightIndex = leftIndex;
+        leftIndex++;
+        if (leftIndex == roads.Length)
+            leftIndex = 0;
+    }
+
+    private void Update()
+    {
+        //if (Input.GetMouseButtonDown(0))
+        //    ScrollLeft();
+        //if (Input.GetMouseButtonDown(1))
+        //    ScrollRight();
+
+        if (cam.transform.position.x < (roads[leftIndex].position.x + viewZone))
+            ScrollLeft();
+
+        if (cam.transform.position.x > (roads[rightIndex].position.x - viewZone))
+            ScrollRight();
+
+    }
+
 }
