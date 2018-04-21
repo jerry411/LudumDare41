@@ -2,15 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowVisualiser : MonoBehaviour {
+public class ArrowVisualiser : MonoBehaviour
+{
+    public ArrowGenerator arrowGenerator;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public GameObject arrowUp;
+    public GameObject arrowDown;
+    public GameObject arrowLeft;
+    public GameObject arrowRight;
+
+    GameObject[] arrows;
+
+    void Start ()
+	{
+	    arrows = new GameObject[] { arrowUp, arrowDown, arrowLeft, arrowRight };
+    }
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		
 	}
+
+    public void displayArrow(int index)
+    {
+
+        GameObject selectedArrow = arrows[index];
+    }
 }
