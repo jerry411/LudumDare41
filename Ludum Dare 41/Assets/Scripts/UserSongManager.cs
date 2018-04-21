@@ -25,7 +25,7 @@ public class UserSongManager : MonoBehaviour
 			{
 				yield return null;
 			}
-			//audioClips.Add(audioClipDir.audioClip)
+			audioClips.Add(audioClipDir.GetAudioClip());
 		}
 	}
 }
