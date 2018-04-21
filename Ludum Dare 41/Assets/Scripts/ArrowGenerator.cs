@@ -25,7 +25,7 @@ public class ArrowGenerator : MonoBehaviour
     {
         Debug.Log(selectRandomArrow());
 
-        visualiser.displayArrow(selectRandomArrow());
+        visualiser.spawnArrow(selectRandomArrow());
     }
 
     //This event will be called every frame while music is playing
