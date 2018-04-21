@@ -513,17 +513,7 @@ Prefab:
         type: 2}
       propertyPath: speedText
       value: 
-      objectReference: {fileID: 1471459465}
-    - target: {fileID: 50124597034669158, guid: 5153e6e1133987249aeeb71ddde2791e,
-        type: 2}
-      propertyPath: m_LinearDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50124597034669158, guid: 5153e6e1133987249aeeb71ddde2791e,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 126505672}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5153e6e1133987249aeeb71ddde2791e, type: 2}
   m_IsPrefabParent: 0
