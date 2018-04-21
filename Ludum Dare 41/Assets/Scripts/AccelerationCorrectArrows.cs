@@ -12,7 +12,6 @@ public class AccelerationCorrectArrows : MonoBehaviour
 
 	void Update ()
     {
-
         
 	}
 
@@ -37,4 +36,7 @@ public class AccelerationCorrectArrows : MonoBehaviour
         malusStreakCounter = 0;
         AddToStreak();
     }
+
+
+    
 }
