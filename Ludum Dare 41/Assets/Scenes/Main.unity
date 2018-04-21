@@ -247,6 +247,11 @@ Prefab:
       propertyPath: visualiser
       value: 
       objectReference: {fileID: 1185900966}
+    - target: {fileID: 82822696590386984, guid: c3782bfd0419ae349a6d1f5c9a2a1769,
+        type: 2}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3782bfd0419ae349a6d1f5c9a2a1769, type: 2}
   m_IsPrefabParent: 0
@@ -697,12 +702,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &1344786662
 MonoBehaviour:
@@ -715,7 +720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5449f1f028aa692469427238f906f939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowsInHitArea: []
 --- !u!1001 &1375604129
 Prefab:
   m_ObjectHideFlags: 0

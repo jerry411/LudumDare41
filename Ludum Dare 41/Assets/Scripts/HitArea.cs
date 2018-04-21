@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class HitArea : MonoBehaviour
 {
-    public List<GameObject> arrowsInHitArea;
+    public Queue<GameObject> arrowsInHitArea;
+    //public List<GameObject> arrowsInHitArea;
 
     private void Start()
     {
-        arrowsInHitArea = new List<GameObject>();
+        arrowsInHitArea = new Queue<GameObject>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        arrowsInHitArea.Add(other.gameObject);
+        arrowsInHitArea.Enqueue(other.gameObject);
         other.gameObject.GetComponent<ArrowState>().isInHitArea = true;
     }
 }

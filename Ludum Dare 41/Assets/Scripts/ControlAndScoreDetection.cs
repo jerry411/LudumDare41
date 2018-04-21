@@ -20,24 +20,28 @@ public class ControlAndScoreDetection : MonoBehaviour
 	{
 	    if (!Input.anyKey)
 	    {
-            return;
+            //return;
 	    }
 
-	    GameObject leftMostArrow = GetLeftMostActiveArrow();
+	    //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Count);
+
+        GameObject leftMostArrow = GetLeftMostActiveArrow();
 
 	    if (leftMostArrow == null)
 	    {
             return;
 	    }
 
-	    if (Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0)
+	    //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Peek().name);
+
+        if (Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0)
 	    {
             return;
 	    }
 
         switch (leftMostArrow.name)
 	    {
-	        case "ArrowUp":
+	        case "ArrowUp(Clone)":
 	            if (Input.GetAxis("Vertical") > 0)
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(true);
@@ -45,9 +49,10 @@ public class ControlAndScoreDetection : MonoBehaviour
 	            else
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
+                    Debug.Log("UP");
                 }
 	            break;
-	        case "ArrowDown":
+	        case "ArrowDown(Clone)":
 	            if (Input.GetAxis("Vertical") < 0)
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(true);
@@ -55,9 +60,10 @@ public class ControlAndScoreDetection : MonoBehaviour
 	            else
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
-	            }
+	                Debug.Log("DOWN");
+                }
                 break;
-	        case "ArrowLeft":
+	        case "ArrowLeft(Clone)":
 	            if (Input.GetAxis("Horizontal") < 0)
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(true);
@@ -65,9 +71,10 @@ public class ControlAndScoreDetection : MonoBehaviour
 	            else
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
-	            }
+	                Debug.Log("LEFT");
+                }
                 break;
-	        case "ArrowRight":
+	        case "ArrowRight(Clone)":
 	            if (Input.GetAxis("Horizontal") > 0)
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(true);
@@ -75,13 +82,20 @@ public class ControlAndScoreDetection : MonoBehaviour
 	            else
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
-	            }
+	                Debug.Log("RIGHT");
+                }
                 break;
 	    }
 	}
 
     private GameObject GetLeftMostActiveArrow()
     {
-        return hitArea.GetComponent<HitArea>().arrowsInHitArea.OrderBy(x => x.transform.position.x).FirstOrDefault();
+        if (hitArea.GetComponent<HitArea>().arrowsInHitArea.Count == 0)
+        {
+            return null;
+        }
+
+        return hitArea.GetComponent<HitArea>().arrowsInHitArea.Peek();
+        //return hitArea.GetComponent<HitArea>().arrowsInHitArea.OrderBy(x => x.transform.position.x).FirstOrDefault();
     }
 }
