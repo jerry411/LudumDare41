@@ -522,7 +522,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Thurst = 10
+  m_Text: Thrust = 10
 --- !u!222 &417327800
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1981,7 +1981,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Thurst = 10
+  m_Text: 'Thrust = 10
+
+'
 --- !u!222 &1669202628
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3317,6 +3319,7 @@ GameObject:
   - component: {fileID: 2033802388}
   - component: {fileID: 2033802389}
   - component: {fileID: 2033802390}
+  - component: {fileID: 2033802391}
   m_Layer: 5
   m_Name: ScriptsContainer
   m_TagString: Untagged
@@ -3348,7 +3351,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2033802387}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fc3b2c3e781680468814e5017de5616, type: 3}
   m_Name: 
@@ -3370,6 +3373,17 @@ MonoBehaviour:
   - {fileID: 1407040091}
   - {fileID: 456132327}
   - {fileID: 1810257357}
+--- !u!114 &2033802391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2033802387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c67fdd2400d43b1b86e997d8122017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2093792637
 GameObject:
   m_ObjectHideFlags: 0
