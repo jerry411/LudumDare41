@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowState : MonoBehaviour
 {
-    public Canvas hitArea;
+    public GameObject hitArea;
 
     public AccelerationCorrectArrows stats;
 
@@ -17,7 +17,9 @@ public class ArrowState : MonoBehaviour
 	void Start ()
 	{
         active = true;
-    }
+	    hitArea = GameObject.Find("HitArea");
+	    stats = GameObject.Find("GameManager").GetComponent<AccelerationCorrectArrows>();
+	}
 	
 	void Update ()
 	{
@@ -38,16 +40,17 @@ public class ArrowState : MonoBehaviour
             stats.BreakStreak();
         }
 
-        hitArea.GetComponent<HitArea>().arrowsInHitArea.Remove(gameObject);
+        hitArea.GetComponent<HitArea>().arrowsInHitArea.Dequeue();
+        //hitArea.GetComponent<HitArea>().arrowsInHitArea.Remove(gameObject);
     }
 
     public void Hit(bool goodHit)
     {
-        Debug.Log("HIT");
+        //Debug.Log("HIT");
 
         isHit = true;
         active = false;
-        hitArea.GetComponent<HitArea>().arrowsInHitArea.Remove(gameObject);
+        hitArea.GetComponent<HitArea>().arrowsInHitArea.Dequeue();
 
         if (goodHit)
         {
