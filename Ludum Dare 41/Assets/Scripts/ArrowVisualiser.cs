@@ -12,6 +12,7 @@ public class ArrowVisualiser : MonoBehaviour
     public GameObject arrowRight;
 
     public Canvas spawnArea;
+    public Canvas GUI;
 
     GameObject[] arrows;   
 
@@ -33,8 +34,8 @@ public class ArrowVisualiser : MonoBehaviour
 
     void MoveArrow(GameObject arrow)
     {
-        float translation = Screen.width / 2f / 120f * Time.deltaTime;
-        arrow.transform.Translate(new Vector3(-10, 0, 0));
+        float translation = Screen.width / 2f / 2f * Time.deltaTime;
+        arrow.transform.Translate(new Vector3(-translation, 0f, 0f));
     }
 
     public void spawnArrow(int index)
@@ -51,8 +52,10 @@ public class ArrowVisualiser : MonoBehaviour
             case 3: spawnPosition.y -= 230; break;
         }
 
-        Instantiate(selectedArrow, spawnPosition, Quaternion.identity);
+        GameObject newArrow = Instantiate(selectedArrow, spawnPosition, Quaternion.identity);
 
-        activeArrows.Add(selectedArrow);
+        newArrow.transform.SetParent(GUI.transform, true);
+
+        activeArrows.Add(newArrow);
     }
 }

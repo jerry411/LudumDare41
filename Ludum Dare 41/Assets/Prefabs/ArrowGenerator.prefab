@@ -158,7 +158,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   processor: {fileID: 114130979090252022}
-  arrowUp: {fileID: 1753057998569104, guid: dd08de72c612c6f4183785c75f79d58f, type: 2}
-  arrowDown: {fileID: 1411114978960210, guid: 2e35a6345fa20294db861cd9cb31f5d8, type: 2}
-  arrowLeft: {fileID: 1551835343475522, guid: 65649f814c134b3428dd00bfe8e53be2, type: 2}
-  arrowRight: {fileID: 1295993434155900, guid: cac8b63b1acede54da03cb93e3ce0ad1, type: 2}
+  mainSongSource: {fileID: 0}
+  visualiser: {fileID: 0}
