@@ -20,7 +20,8 @@ public class ArrowVisualiser : MonoBehaviour
     void Start ()
 	{
 	    arrows = new GameObject[] { arrowUp, arrowDown, arrowLeft, arrowRight };
-    }
+	    activeArrows = new List<GameObject>();
+	}
 	
 	void Update ()
 	{
@@ -32,7 +33,8 @@ public class ArrowVisualiser : MonoBehaviour
 
     void MoveArrow(GameObject arrow)
     {
-        throw new System.NotImplementedException();
+        float translation = Screen.width / 2f / 120f * Time.deltaTime;
+        arrow.transform.Translate(new Vector3(-10, 0, 0));
     }
 
     public void spawnArrow(int index)
@@ -43,10 +45,10 @@ public class ArrowVisualiser : MonoBehaviour
 
         switch (index)
         {
-            case 0: spawnPosition.y += 20; break;
-            case 1: spawnPosition.y += 40; break;
-            case 2: spawnPosition.y += 60; break;
-            case 3: spawnPosition.y += 80; break;
+            case 0: spawnPosition.y -= 50; break;
+            case 1: spawnPosition.y -= 110; break;
+            case 2: spawnPosition.y -= 170; break;
+            case 3: spawnPosition.y -= 230; break;
         }
 
         Instantiate(selectedArrow, spawnPosition, Quaternion.identity);
