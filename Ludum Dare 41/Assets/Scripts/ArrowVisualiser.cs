@@ -49,7 +49,7 @@ public class ArrowVisualiser : MonoBehaviour
 
         newArrow.transform.SetParent(GUI.transform, true);
 
-        newArrow.GetComponent<ArrowState>();
+        //newArrow.GetComponent<ArrowState>();
         activeArrows.Add(newArrow);
         allArrows.Add(newArrow);
     }
