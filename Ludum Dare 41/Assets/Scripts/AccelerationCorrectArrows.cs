@@ -7,10 +7,16 @@ public class AccelerationCorrectArrows : MonoBehaviour {
     private int streakCount = 0;
     private int malusStreakCounter = 0;
 
+    bool gotRight;
+
 	// Update is called once per frame
 	void Update ()
     {
-		
+
+
+        if (gotRight)
+            AddToStreak();
+        
 	}
 
     void AddToStreak()
