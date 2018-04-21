@@ -13,6 +13,8 @@ public class ArrowVisualiser : MonoBehaviour
 
     GameObject[] arrows;
 
+    List<GameObject> activeArrows;
+
     void Start ()
 	{
 	    arrows = new GameObject[] { arrowUp, arrowDown, arrowLeft, arrowRight };
@@ -20,8 +22,16 @@ public class ArrowVisualiser : MonoBehaviour
 	
 	void Update ()
 	{
-		
+	    foreach (GameObject arrow in activeArrows)
+	    {
+	        MoveArrow(arrow);
+	    }
 	}
+
+    void MoveArrow(GameObject arrow)
+    {
+        throw new System.NotImplementedException();
+    }
 
     public void displayArrow(int index)
     {
