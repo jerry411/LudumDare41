@@ -8,7 +8,7 @@ public class Karts {
 
     public void MoveAhead()
     {
-        rb.AddForce(rb.gameObject.transform.right * thrust, ForceMode2D.Force);
+        rb.AddForce(rb.gameObject.transform.right * thrust);
     }
 
     public Karts(GameObject go)

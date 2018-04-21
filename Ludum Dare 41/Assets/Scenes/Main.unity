@@ -144,6 +144,8 @@ MonoBehaviour:
   rightIndex: 0
   roads: []
   bgSize: 27
+  viewZone: 10
+  cam: {fileID: 0}
 --- !u!4 &391474924
 Transform:
   m_ObjectHideFlags: 0
@@ -540,7 +542,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1473510646}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ab1e2e4b5f004f4fa2a8edc44ef0253, type: 3}
   m_Name: 
@@ -614,7 +616,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
