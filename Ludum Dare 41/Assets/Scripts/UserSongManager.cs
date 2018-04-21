@@ -5,44 +5,26 @@ using System.IO;
 
 public class UserSongManager : MonoBehaviour 
 {
-	[SerializeField] AudioSource source;
+	[SerializeField] AudioSource source = null;
 
 	void Start()
 	{
-		StartCoroutine(loadAudioClip());
+		StartCoroutine(loadAudioClip("https://raw.githubusercontent.com/jerry411/LudumDare41/master/UserSongs/Maxime%20Abbey%20-%20Green%20Hills.ogg"));
 	}
-	private IEnumerator loadAudioClip()
+	private IEnumerator loadAudioClip(string url)
 	{
-		string path = "../UserSongs/";
-		string fileExtension = "*.ogg";
-		string[] filePaths = Directory.GetFiles(path, fileExtension);
-		Debug.Log(filePaths[0]);
+		WWW audioClipPath = new WWW(url);
 
-		List <AudioClip> audioClips = new List<AudioClip>();
-		for(int i = 0; i < filePaths.Length; i++)
+		while(!audioClipPath.isDone)
 		{
-			WWW audioClipDir = new WWW("https://github.com/jerry411/LudumDare41/blob/master/UserSongs/CaveChiptune.wav"); //+ filePaths[i]);
-			//WWW audioClipDir = new WWW("../UserSongs/" + filePaths[i]);
-			//WWW audioClipDir = new WWW(filePaths[i]);
-
-			while(!audioClipDir.isDone)
-			{
-				yield return null;
-			}
-			audioClips.Add(audioClipDir.GetAudioClip());
-			if(audioClips[i] == null)
-			{
-				Debug.Log("Fucking null");
-			}
-			SetAudioClip(audioClips[i]);
+			yield return null;
 		}
-	}
-	private void SetAudioClip(AudioClip clip)
-	{
-		source.clip = clip;
-		if(!source.isPlaying)
+		Debug.Log(audioClipPath.bytesDownloaded);
+		source.clip = audioClipPath.GetAudioClip(true, false);
+		if (!source.isPlaying && source.clip.loadState == AudioDataLoadState.Loaded)
 		{
 			source.Play();
-		}
+		}    
+
 	}
 }
