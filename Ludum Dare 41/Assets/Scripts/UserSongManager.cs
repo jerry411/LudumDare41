@@ -19,12 +19,12 @@ public class UserSongManager : MonoBehaviour
 		{
 			yield return null;
 		}
-		Debug.Log(audioClipPath.bytesDownloaded);
+
+		Debug.Log("Audio clip size in bytes: " + audioClipPath.bytesDownloaded);
 		source.clip = audioClipPath.GetAudioClip(true, false);
 		if (!source.isPlaying && source.clip.loadState == AudioDataLoadState.Loaded)
 		{
 			source.Play();
 		}    
-
 	}
 }
