@@ -418,6 +418,11 @@ Prefab:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82975840050116672, guid: 81994f6ac159c2a43868aa0088a8c9ae,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81994f6ac159c2a43868aa0088a8c9ae, type: 2}
   m_IsPrefabParent: 0
@@ -1180,15 +1185,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4345007657457688, guid: c3782bfd0419ae349a6d1f5c9a2a1769, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 501.18085
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4345007657457688, guid: c3782bfd0419ae349a6d1f5c9a2a1769, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 177.91905
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4345007657457688, guid: c3782bfd0419ae349a6d1f5c9a2a1769, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -2.125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4345007657457688, guid: c3782bfd0419ae349a6d1f5c9a2a1769, type: 2}
       propertyPath: m_LocalRotation.x
