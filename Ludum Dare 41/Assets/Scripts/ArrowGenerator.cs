@@ -23,7 +23,7 @@ public class ArrowGenerator : MonoBehaviour
     //Change the threshold parameter in the inspector to adjust the sensitivity
     void onBeatDetected()
     {
-        Debug.Log(selectRandomArrow());
+        //Debug.Log(selectRandomArrow());
 
         visualiser.spawnArrow(selectRandomArrow());
     }

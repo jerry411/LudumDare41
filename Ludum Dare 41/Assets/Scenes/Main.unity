@@ -829,6 +829,7 @@ MonoBehaviour:
   arrowDown: {fileID: 1411114978960210, guid: 2e35a6345fa20294db861cd9cb31f5d8, type: 2}
   arrowLeft: {fileID: 1551835343475522, guid: 65649f814c134b3428dd00bfe8e53be2, type: 2}
   arrowRight: {fileID: 1295993434155900, guid: cac8b63b1acede54da03cb93e3ce0ad1, type: 2}
+  spawnArea: {fileID: 143373483}
 --- !u!1 &1473510646
 GameObject:
   m_ObjectHideFlags: 0
