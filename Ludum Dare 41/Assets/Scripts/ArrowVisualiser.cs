@@ -46,10 +46,10 @@ public class ArrowVisualiser : MonoBehaviour
 
         switch (index)
         {
-            case 0: spawnPosition.y -= 50; break;
-            case 1: spawnPosition.y -= 110; break;
-            case 2: spawnPosition.y -= 170; break;
-            case 3: spawnPosition.y -= 230; break;
+            case 0: spawnPosition.y -= 25; break;
+            case 1: spawnPosition.y -= 75; break;
+            case 2: spawnPosition.y -= 125; break;
+            case 3: spawnPosition.y -= 175; break;
         }
 
         GameObject newArrow = Instantiate(selectedArrow, spawnPosition, Quaternion.identity);

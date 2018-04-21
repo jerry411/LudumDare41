@@ -317,15 +317,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4128168389840868, guid: c67760d659746e448bcbb52295b38134, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.28142574
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4128168389840868, guid: c67760d659746e448bcbb52295b38134, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.21499895
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4128168389840868, guid: c67760d659746e448bcbb52295b38134, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.1641445
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4128168389840868, guid: c67760d659746e448bcbb52295b38134, type: 2}
       propertyPath: m_LocalRotation.x
@@ -367,10 +367,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowGenerator: {fileID: 240287933}
-  arrowUp: {fileID: 1753057998569104, guid: dd08de72c612c6f4183785c75f79d58f, type: 2}
-  arrowDown: {fileID: 1411114978960210, guid: 2e35a6345fa20294db861cd9cb31f5d8, type: 2}
-  arrowLeft: {fileID: 1551835343475522, guid: 65649f814c134b3428dd00bfe8e53be2, type: 2}
-  arrowRight: {fileID: 1295993434155900, guid: cac8b63b1acede54da03cb93e3ce0ad1, type: 2}
+  arrowUp: {fileID: 1913597115130082, guid: 1d2a53b469aca0e4ca2a02159bbc77a1, type: 2}
+  arrowDown: {fileID: 1425075822014418, guid: b417c765f7a81d8449f16a81b959d898, type: 2}
+  arrowLeft: {fileID: 1639655666252096, guid: c2b5b97557cfc9c47884d9cbf9635bf3, type: 2}
+  arrowRight: {fileID: 1307003306330228, guid: 51c43648bd30e714b894f381f851a7cd, type: 2}
   spawnArea: {fileID: 1248525904}
   GUI: {fileID: 1809347990}
 --- !u!1 &1248525900
@@ -656,11 +656,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4078963349738420, guid: 81994f6ac159c2a43868aa0088a8c9ae, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.4056265
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4078963349738420, guid: 81994f6ac159c2a43868aa0088a8c9ae, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.10528095
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4078963349738420, guid: 81994f6ac159c2a43868aa0088a8c9ae, type: 2}
       propertyPath: m_LocalPosition.z
@@ -993,7 +993,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1809347991
 RectTransform:
