@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class ArrowGenerator : MonoBehaviour
 {
@@ -8,8 +11,9 @@ public class ArrowGenerator : MonoBehaviour
 
     public AudioSource mainSongSource;
 
-    public ArrowVisualiser visualiser;      
+    public ArrowVisualiser visualiser;
 
+    private DateTime lastBeat;
 
     void Start ()
 	{
@@ -17,14 +21,22 @@ public class ArrowGenerator : MonoBehaviour
 	    //processor.onSpectrum.AddListener(onSpectrum);	    
 
 	    mainSongSource.PlayDelayed(2);
+
+	    lastBeat = DateTime.MinValue;
 	}
 
     //This event will be called every time a beat is detected.
     //Change the threshold parameter in the inspector to adjust the sensitivity
     void onBeatDetected()
     {
-        //Debug.Log(selectRandomArrow());
+        //Debug.Log(DateTime.Now.Subtract(lastBeat).Milliseconds);
 
+        if (DateTime.Now.Subtract(lastBeat).Milliseconds < 250)
+        {
+            return;
+        }
+
+        lastBeat = DateTime.Now;
         visualiser.spawnArrow(selectRandomArrow());
     }
 

@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ArrowState : MonoBehaviour
 {
@@ -14,7 +13,17 @@ public class ArrowState : MonoBehaviour
 
     public bool isHit;
 
-	void Start ()
+    public Sprite ArrowUpGood;
+    public Sprite ArrowDownGood;
+    public Sprite ArrowLeftGood;
+    public Sprite ArrowRightGood;
+
+    public Sprite ArrowUpBad;
+    public Sprite ArrowDownBad;
+    public Sprite ArrowLeftBad;
+    public Sprite ArrowRightBad;
+
+    void Start ()
 	{
         active = true;
 	    hitArea = GameObject.Find("HitArea");
@@ -32,16 +41,14 @@ public class ArrowState : MonoBehaviour
 	    }
     }
 
-    void GotAfterHitArea()
+    public void GotAfterHitArea()
     {
         if (!isHit)
         {
-            //stats.AddMalus();
-            //stats.BreakStreak();
+            stats.AddMalus();
+            stats.BreakStreak();
+            ChangeColorWrongHit();
         }
-
-        hitArea.GetComponent<HitArea>().arrowsInHitArea.Dequeue();
-        //hitArea.GetComponent<HitArea>().arrowsInHitArea.Remove(gameObject);
     }
 
     public void Hit(bool goodHit)
@@ -54,16 +61,54 @@ public class ArrowState : MonoBehaviour
 
         if (goodHit)
         {
-            //stats.AddToStreak();
-            //stats.BreakMalus();
+            stats.AddToStreak();
+            stats.BreakMalus();
+            ChangeColorGoodHit();
         }
         else
         {
-            //stats.AddToStreak();
-            //stats.BreakStreak();
+            stats.AddToStreak();
+            stats.BreakStreak();
+            ChangeColorWrongHit();
         }
-        
-
-        //TODO: change color/fade
     }
+
+    void ChangeColorWrongHit()
+    {
+        switch (name)
+        {
+            case "ArrowUp(Clone)":
+                GetComponent<Image>().sprite = ArrowUpBad;
+                break;
+            case "ArrowDown(Clone)":
+                GetComponent<Image>().sprite = ArrowDownBad;
+                break;
+            case "ArrowLeft(Clone)":
+                GetComponent<Image>().sprite = ArrowLeftBad;
+                break;
+            case "ArrowRight(Clone)":
+                GetComponent<Image>().sprite = ArrowRightBad;
+                break;
+        }
+    }
+
+    void ChangeColorGoodHit()
+    {
+        switch (name)
+        {
+            case "ArrowUp(Clone)":
+                GetComponent<Image>().sprite = ArrowUpGood;
+                break;
+            case "ArrowDown(Clone)":
+                GetComponent<Image>().sprite = ArrowDownGood;
+                break;
+            case "ArrowLeft(Clone)":
+                GetComponent<Image>().sprite = ArrowLeftGood;
+                break;
+            case "ArrowRight(Clone)":
+                GetComponent<Image>().sprite = ArrowRightGood;
+                break;
+        }
+    }
+
 }
