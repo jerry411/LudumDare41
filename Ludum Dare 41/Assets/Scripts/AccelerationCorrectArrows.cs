@@ -13,6 +13,8 @@ public class AccelerationCorrectArrows : MonoBehaviour
     public Karts kart;
     public GameObject kartGO;
 
+    bool aceleing;
+    bool deceilng;
 	void Update ()
     {
         streakVal.value = streakCount / 10;
@@ -72,10 +74,8 @@ public class AccelerationCorrectArrows : MonoBehaviour
 
         kart.StreakBoost(kartGO);
         Debug.Log("Boosted!");
-
         yield return new WaitForSeconds(10f);
         
-
         kart.StreakSlowDown(kartGO);
 
     }
@@ -85,12 +85,12 @@ public class AccelerationCorrectArrows : MonoBehaviour
      
         kart.MalusSlow(kartGO);
         Debug.Log("Slowed!!");
-
+        deceilng = true;
         yield return new WaitForSeconds(10f);
         
 
         kart.MalusFastAgain(kartGO);
-
+        deceilng = false;
     }
 
 }
