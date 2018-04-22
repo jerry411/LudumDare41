@@ -12,6 +12,8 @@ public class AccelerationCorrectArrows : MonoBehaviour
     public Karts kart;
     public GameObject kartGO;
 
+    public Animator animator;
+
     //bool aceleing;
     //bool deceilng;
 
@@ -72,10 +74,12 @@ public class AccelerationCorrectArrows : MonoBehaviour
     {
 
         kart.StreakBoost(kartGO);
+        animator.SetBool(0, true);
         Debug.Log("Boosted!");
         yield return new WaitForSeconds(10f);
         
         kart.StreakSlowDown(kartGO);
+        animator.SetBool(0, false);
 
     }
 
