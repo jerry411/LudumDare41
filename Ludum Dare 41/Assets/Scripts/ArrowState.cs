@@ -47,8 +47,8 @@ public class ArrowState : MonoBehaviour
     {
         if (!isHit)
         {
-            //stats.AddMalus();
-            //stats.BreakStreak();
+            stats.AddMalus();
+            stats.BreakStreak();
             ChangeColorWrongHit();
         }
 
@@ -66,14 +66,14 @@ public class ArrowState : MonoBehaviour
 
         if (goodHit)
         {
-            //stats.AddToStreak();
-            //stats.BreakMalus();
+            stats.AddToStreak();
+            stats.BreakMalus();
             ChangeColorGoodHit();
         }
         else
         {
-            //stats.AddToStreak();
-            //stats.BreakStreak();
+            stats.AddToStreak();
+            stats.BreakStreak();
             ChangeColorWrongHit();
         }
     }

@@ -26,13 +26,17 @@ public class ControlAndScoreDetection : MonoBehaviour
 	    float currentVertical = Input.GetAxis("Vertical");
 
         if (!Input.anyKey)
-	    {
+        {
+            lastTimeHorizontal = 0;
+            lastTimeVertical = 0;
             return;
 	    }
 
 	    if ((currentHorizontal != 0 && currentVertical != 0) || (currentHorizontal == 0 && currentVertical == 0))
         {
-	        return;
+            lastTimeHorizontal = 0;
+            lastTimeVertical = 0;
+            return;
 	    }
 
         if ((lastTimeHorizontal > 0 && currentHorizontal > 0) || (lastTimeHorizontal < 0 && currentHorizontal < 0))
@@ -59,7 +63,7 @@ public class ControlAndScoreDetection : MonoBehaviour
 
         //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Peek().name);
 
-	    //Debug.Log(String.Format("{0}    {1}", Input.GetAxis("Vertical"), Input.GetAxis("Horizontal")));
+	    Debug.Log(String.Format("{0}    {1}", Input.GetAxis("Vertical"), Input.GetAxis("Horizontal")));
         
 
         switch (leftMostArrow.name)
