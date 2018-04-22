@@ -8,18 +8,22 @@ public class UserSongManager : MonoBehaviour
 {
 	// Variables
 	private AudioSource source = null;
+	private List <string> fileNames = new List <string>();
 
 	// Constants
 	private const string pathToMusicFolder = "../UserSongs/";
+	private const string wwwPathToMusicFolder = "../../../UserSongs/";
 	private string[] possibleExtensions = new string[2] {"*.ogg", "*.wav"};
 
 	void Awake()
 	{
-		//StartCoroutine(LoadAudioClip("https://raw.githubusercontent.com/jerry411/LudumDare41/master/UserSongs/Maxime%20Abbey%20-%20Green%20Hills.ogg"));
-		GetFileNames();
+		source = GetComponent<AudioSource>();
+
+		StartCoroutine(LoadAudioClip(0));	
 	}
-	private IEnumerator LoadAudioClip(string url)
+	private IEnumerator LoadAudioClip(int index)
 	{
+		string url = "file:///" + Application.dataPath + wwwPathToMusicFolder + fileNames[index];
 		WWW audioClipPath = new WWW(url);
 
 		while(!audioClipPath.isDone)
@@ -33,9 +37,11 @@ public class UserSongManager : MonoBehaviour
 			source.Play();
 		}    
 	}
-	private void GetFileNames()
+	private List <string> GetFileNames()
 	{
+		List <string> localFileNames = new List <string>();
 		string[] filePaths = new string[0];
+
 		for(int i = 0; i < possibleExtensions.Length; i++)
 		{
 			string[] tempFilePaths = Directory.GetFiles(pathToMusicFolder, possibleExtensions[i]);
@@ -45,6 +51,12 @@ public class UserSongManager : MonoBehaviour
 		for(int i = 0; i < filePaths.Length; i++)
 		{
 			Debug.Log(Path.GetFileName(filePaths[i]));
+			localFileNames.Add(Path.GetFileName(filePaths[i]));
 		}
+		return localFileNames;
+	}
+	private void DisplayCustomsSongsInList()
+	{
+		fileNames = GetFileNames();
 	}
 }
