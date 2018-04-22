@@ -12,9 +12,15 @@ public class UIManager : MonoBehaviour {
 
     private void Start()
     {
-        fullScreenToggleButton.isOn = Screen.fullScreen;
+        if (fullScreenToggleButton != null)
+        {
+            fullScreenToggleButton.isOn = Screen.fullScreen;
+        }
 
-        graphicsQualityDropdownButton.value = QualitySettings.GetQualityLevel();
+        if (graphicsQualityDropdownButton != null)
+        {
+            graphicsQualityDropdownButton.value = QualitySettings.GetQualityLevel();
+        }        
     }
 
     public void ToggleFullScreen(bool newState)
