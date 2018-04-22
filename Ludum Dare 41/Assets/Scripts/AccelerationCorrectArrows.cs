@@ -12,13 +12,8 @@ public class AccelerationCorrectArrows : MonoBehaviour
     public Karts kart;
     public GameObject kartGO;
 
-    bool aceleing;
-    bool deceilng;
-
-    private void Start()
-    {
-        
-    }
+    //bool aceleing;
+    //bool deceilng;
 
     void Update ()
     {
@@ -89,12 +84,10 @@ public class AccelerationCorrectArrows : MonoBehaviour
      
         kart.MalusSlow(kartGO);
         Debug.Log("Slowed!!");
-        deceilng = true;
         yield return new WaitForSeconds(10f);
         
 
         kart.MalusFastAgain(kartGO);
-        deceilng = false;
     }
 
 }
