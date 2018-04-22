@@ -20,7 +20,7 @@ public class AccelerationCorrectArrows : MonoBehaviour
     void Update ()
     {
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        /*if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             BreakMalus();
             AddToStreak();
@@ -29,7 +29,7 @@ public class AccelerationCorrectArrows : MonoBehaviour
         {
             BreakStreak();
             AddMalus();
-        }
+        }*/
 
         if (streakCount >= 10)
         {
@@ -56,7 +56,6 @@ public class AccelerationCorrectArrows : MonoBehaviour
     public void BreakStreak()
     {
         streakCount = 0;
-
     }
 
     public void AddMalus()
@@ -67,7 +66,6 @@ public class AccelerationCorrectArrows : MonoBehaviour
     public void BreakMalus()
     {
         malusStreakCounter = 0;
-
     }
 
     IEnumerator Accelerate()
