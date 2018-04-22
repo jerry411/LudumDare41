@@ -67,7 +67,7 @@ public class ArrowState : MonoBehaviour
         }
         else
         {
-            stats.AddToStreak();
+            stats.AddMalus();
             stats.BreakStreak();
             ChangeColorWrongHit();
         }
