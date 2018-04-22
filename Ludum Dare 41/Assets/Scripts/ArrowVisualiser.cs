@@ -35,7 +35,8 @@ public class ArrowVisualiser : MonoBehaviour
     {
         GameObject selectedArrow = arrows[index];
 
-        Vector3 spawnPosition = spawnArea.transform.position;
+        //Vector3 spawnPosition = spawnArea.transform.position;
+        Vector3 spawnPosition = new Vector3(Screen.width + 50, Screen.height, 0);
 
         switch (index)
         {

@@ -42,9 +42,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -92,6 +92,14 @@ MonoBehaviour:
   active: 0
   isInHitArea: 0
   isHit: 0
+  ArrowUpGood: {fileID: 21300000, guid: a10421d3be5ae704abf275193bb7c122, type: 3}
+  ArrowDownGood: {fileID: 21300000, guid: c5e3b20f5e4d0724fa0afc4682c72c92, type: 3}
+  ArrowLeftGood: {fileID: 21300000, guid: d36b98d1441bd0e4ba14f5fdf0fcd63e, type: 3}
+  ArrowRightGood: {fileID: 21300000, guid: a91f5d1dff8b8a84897e1ed577f90c12, type: 3}
+  ArrowUpBad: {fileID: 21300000, guid: 7af766b5d8010924794423dd60ed0933, type: 3}
+  ArrowDownBad: {fileID: 21300000, guid: 4a8e83e4671c1a8409b6fc6593599899, type: 3}
+  ArrowLeftBad: {fileID: 21300000, guid: bd2a7c014a6410e46b1e471802f3a1bc, type: 3}
+  ArrowRightBad: {fileID: 21300000, guid: f61b911cf1c3f7748b80bd385624933e, type: 3}
 --- !u!114 &114609283438369604
 MonoBehaviour:
   m_ObjectHideFlags: 1
