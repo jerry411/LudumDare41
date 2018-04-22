@@ -12,7 +12,10 @@ public class ControlAndScoreDetection : MonoBehaviour
 
     public Canvas hitArea;
 
-	void Start ()
+    private float lastTimeHorizontal;
+    private float lastTimeVertical;
+
+    void Start ()
 	{
 		
 	}	
@@ -24,7 +27,23 @@ public class ControlAndScoreDetection : MonoBehaviour
             //return;
 	    }
 
-	    //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Count);
+	    if ((Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0) || (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0))
+
+        {
+	        return;
+	    }
+
+        if ((lastTimeHorizontal > 0 && Input.GetAxis("Horizontal") > 0) || (lastTimeHorizontal < 0 && Input.GetAxis("Horizontal") < 0))
+	    {
+	        return;
+        }
+
+	    if ((lastTimeVertical > 0 && Input.GetAxis("Vertical") > 0) || (lastTimeVertical < 0 && Input.GetAxis("Vertical") < 0))
+	    {
+	        return;
+	    }
+
+        //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Count);
 
         GameObject leftMostArrow = GetLeftMostActiveArrow();
 
@@ -35,12 +54,8 @@ public class ControlAndScoreDetection : MonoBehaviour
 
         //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Peek().name);
 
-	    Debug.Log(String.Format("{0}/t{1}", Input.GetAxis("Horizontal"), Input.GetAxis("Horizontal")));
-
-        if (Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0)
-	    {
-            return;
-	    }
+	    //Debug.Log(String.Format("{0}    {1}", Input.GetAxis("Vertical"), Input.GetAxis("Horizontal")));
+        
 
         switch (leftMostArrow.name)
 	    {
