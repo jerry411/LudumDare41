@@ -15,12 +15,15 @@ public class ArrowGenerator : MonoBehaviour
 
     private DateTime lastBeat;
 
+    float[] currentSpectrum;
+    float[] previousSpectrum;
+
     void Start ()
 	{
 	    processor.onBeat.AddListener(onBeatDetected);
 	    //processor.onSpectrum.AddListener(onSpectrum);	    
 
-	    mainSongSource.PlayDelayed(2);
+	    mainSongSource.PlayDelayed(2f);
 
 	    lastBeat = DateTime.MinValue;
 	}
@@ -38,22 +41,58 @@ public class ArrowGenerator : MonoBehaviour
 
         lastBeat = DateTime.Now;
         visualiser.spawnArrow(selectRandomArrow());
+
+        //visualiser.spawnArrow(getArrowTypeBasedOnSpectrumChange(previousSpectrum, currentSpectrum));
+
+        //Debug.Log(String.Format("{0}  {1}  {2}  {3}  {4}  {5}  {6}  {7}  {8}  {9}  {10}  {11}", currentSpectrum[0] * 10000
+        //                        , currentSpectrum[1] * 10000, currentSpectrum[2] * 10000, currentSpectrum[3] * 10000, currentSpectrum[4] * 10000, currentSpectrum[5] * 10000, currentSpectrum[6] * 10000
+        //                        , currentSpectrum[7] * 10000, currentSpectrum[8] * 10000, currentSpectrum[9] * 10000, currentSpectrum[10] * 10000, currentSpectrum[11] * 10000));
+
+        //previousSpectrum = currentSpectrum;
     }
 
-    //This event will be called every frame while music is playing
-    /*void onSpectrum(float[] spectrum)
+    private int getArrowTypeBasedOnSpectrumChange(float[] previousSpectrum, float[] currentSpectrum)
     {
+        if (previousSpectrum == null || currentSpectrum == null)
+        {
+            return 0;
+        }
+
+        float biggestChange = float.MinValue;
+        int indexOfBiggestChange = 0;
+
+        for (int i = 0; i < previousSpectrum.Length; i++)
+        {
+            if (currentSpectrum[i] - previousSpectrum[i] > biggestChange)
+            {
+                biggestChange = currentSpectrum[i] - previousSpectrum[i];
+                indexOfBiggestChange = i;
+            }
+        }
+
+        Debug.Log(indexOfBiggestChange);
+
+        return indexOfBiggestChange / 3;
+    }   
+
+    //This event will be called every frame while music is playing
+    void onSpectrum(float[] spectrum)
+    {
+        currentSpectrum = spectrum;
+
         for (int i = 0; i < spectrum.Length; ++i)
         {
-            Debug.Log(spectrum[i]);
+            //Debug.Log(spectrum.Length);
             Vector3 start = new Vector3(i, 0, 0);
             Vector3 end   = new Vector3(i, spectrum[i], 0);
             Debug.DrawLine(start, end);
         }
-    }*/
+    }
 
     int selectRandomArrow()
     {
         return Random.Range(0, 4);
-    }  
+    }
+
+
 }

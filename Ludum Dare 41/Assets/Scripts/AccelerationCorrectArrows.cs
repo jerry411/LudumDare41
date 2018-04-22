@@ -7,18 +7,16 @@ public class AccelerationCorrectArrows : MonoBehaviour
 {
     public int streakCount = 0;
     public int malusStreakCounter = 0;
-    public Slider streakVal;
-    public Slider malusVal;
+
     bool gotRight;
     public Karts kart;
     public GameObject kartGO;
 
-    bool aceleing;
-    bool deceilng;
-	void Update ()
+    //bool aceleing;
+    //bool deceilng;
+
+    void Update ()
     {
-        streakVal.value = streakCount / 10;
-        malusVal.value = malusStreakCounter / 3;
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -44,6 +42,7 @@ public class AccelerationCorrectArrows : MonoBehaviour
             StartCoroutine(Decellerate());
             malusStreakCounter = 0;
         }
+
 
 	}
 
@@ -85,12 +84,10 @@ public class AccelerationCorrectArrows : MonoBehaviour
      
         kart.MalusSlow(kartGO);
         Debug.Log("Slowed!!");
-        deceilng = true;
         yield return new WaitForSeconds(10f);
         
 
         kart.MalusFastAgain(kartGO);
-        deceilng = false;
     }
 
 }
