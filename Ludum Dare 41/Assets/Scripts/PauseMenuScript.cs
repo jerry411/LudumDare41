@@ -8,7 +8,9 @@ public class PauseMenuScript : MonoBehaviour
     public static bool gamePaused = false;
     public GameObject pauseMenuCanvas;
 
-	// Update is called once per frame
+    public GameObject songSource;
+    public GameObject arrowGenerator;
+
 	void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -25,6 +27,9 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
         gamePaused = false;
+
+        songSource.GetComponent<AudioSource>().UnPause();
+        arrowGenerator.GetComponent<AudioSource>().UnPause();
     }
 
     public void Pause()
@@ -32,5 +37,9 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuCanvas.SetActive(true);
         Time.timeScale = 0.0f;
         gamePaused = true;
+
+        
+        songSource.GetComponent<AudioSource>().Pause();
+        arrowGenerator.GetComponent<AudioSource>().Pause();
     }
 }
