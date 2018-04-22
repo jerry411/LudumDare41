@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ArrowVisualiser : MonoBehaviour
@@ -11,7 +10,6 @@ public class ArrowVisualiser : MonoBehaviour
     public GameObject arrowLeft;
     public GameObject arrowRight;
 
-    public Canvas spawnArea;
     public Canvas GUI;
 
     GameObject[] arrows;   
@@ -25,17 +23,12 @@ public class ArrowVisualiser : MonoBehaviour
 	    activeArrows = new List<GameObject>();
 	    allArrows = new List<GameObject>();
 	}
-	
-	void Update ()
-	{
-
-	}
 
     public void spawnArrow(int index)
     {
         GameObject selectedArrow = arrows[index];
 
-        Vector3 spawnPosition = spawnArea.transform.position;
+        Vector3 spawnPosition = new Vector3(Screen.width + 50, Screen.height, 0);
 
         switch (index)
         {
@@ -49,7 +42,6 @@ public class ArrowVisualiser : MonoBehaviour
 
         newArrow.transform.SetParent(GUI.transform, true);
 
-        //newArrow.GetComponent<ArrowState>();
         activeArrows.Add(newArrow);
         allArrows.Add(newArrow);
     }
