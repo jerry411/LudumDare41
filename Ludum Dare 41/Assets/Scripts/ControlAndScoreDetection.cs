@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -32,7 +33,9 @@ public class ControlAndScoreDetection : MonoBehaviour
             return;
 	    }
 
-	    //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Peek().name);
+        //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Peek().name);
+
+	    Debug.Log(String.Format("{0}/t{1}", Input.GetAxis("Horizontal"), Input.GetAxis("Horizontal")));
 
         if (Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0)
 	    {
@@ -49,7 +52,7 @@ public class ControlAndScoreDetection : MonoBehaviour
 	            else
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
-                    Debug.Log("UP");
+                    //Debug.Log("UP");
                 }
 	            break;
 	        case "ArrowDown(Clone)":
@@ -60,7 +63,7 @@ public class ControlAndScoreDetection : MonoBehaviour
 	            else
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
-	                Debug.Log("DOWN");
+	                //Debug.Log("DOWN");
                 }
                 break;
 	        case "ArrowLeft(Clone)":
@@ -71,7 +74,7 @@ public class ControlAndScoreDetection : MonoBehaviour
 	            else
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
-	                Debug.Log("LEFT");
+	                //Debug.Log("LEFT");
                 }
                 break;
 	        case "ArrowRight(Clone)":
@@ -82,7 +85,7 @@ public class ControlAndScoreDetection : MonoBehaviour
 	            else
 	            {
 	                leftMostArrow.GetComponent<ArrowState>().Hit(false);
-	                Debug.Log("RIGHT");
+	                //Debug.Log("RIGHT");
                 }
                 break;
 	    }
