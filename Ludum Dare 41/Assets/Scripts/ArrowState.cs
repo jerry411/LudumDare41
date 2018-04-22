@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ArrowState : MonoBehaviour
@@ -51,9 +49,6 @@ public class ArrowState : MonoBehaviour
             stats.BreakStreak();
             ChangeColorWrongHit();
         }
-
-        //hitArea.GetComponent<HitArea>().arrowsInHitArea.Dequeue();
-        //hitArea.GetComponent<HitArea>().arrowsInHitArea.Remove(gameObject);
     }
 
     public void Hit(bool goodHit)

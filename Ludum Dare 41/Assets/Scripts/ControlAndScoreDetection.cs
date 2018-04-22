@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class ControlAndScoreDetection : MonoBehaviour
@@ -15,44 +12,18 @@ public class ControlAndScoreDetection : MonoBehaviour
     private float lastTimeHorizontal;
     private float lastTimeVertical;
 
-    void Start ()
-	{
-		
-	}	
-
 	void Update ()
 	{
-	    float currentHorizontal = Input.GetAxis("Horizontal");
+	    //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Count);
+
+        float currentHorizontal = Input.GetAxis("Horizontal");
 	    float currentVertical = Input.GetAxis("Vertical");
 
-        if (!Input.anyKey)
-        {
-            lastTimeHorizontal = 0;
-            lastTimeVertical = 0;
+        if (CheckAgainstPreviousInput(currentHorizontal, currentVertical))
             return;
-	    }
-
-	    if ((currentHorizontal != 0 && currentVertical != 0) || (currentHorizontal == 0 && currentVertical == 0))
-        {
-            lastTimeHorizontal = 0;
-            lastTimeVertical = 0;
-            return;
-	    }
-
-        if ((lastTimeHorizontal > 0 && currentHorizontal > 0) || (lastTimeHorizontal < 0 && currentHorizontal < 0))
-	    {
-	        return;
-        }
-
-	    if ((lastTimeVertical > 0 && currentVertical > 0) || (lastTimeVertical < 0 && currentVertical < 0))
-	    {
-	        return;
-	    }
 
 	    lastTimeHorizontal = currentHorizontal;
-	    lastTimeVertical = currentVertical;
-
-        //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Count);
+	    lastTimeVertical = currentVertical;        
 
         GameObject leftMostArrow = GetLeftMostActiveArrow();
 
@@ -61,10 +32,7 @@ public class ControlAndScoreDetection : MonoBehaviour
             return;
 	    }
 
-        //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Peek().name);
-
-	    Debug.Log(String.Format("{0}    {1}", Input.GetAxis("Vertical"), Input.GetAxis("Horizontal")));
-        
+	    //Debug.Log(String.Format("{0}    {1}", Input.GetAxis("Vertical"), Input.GetAxis("Horizontal")));       
 
         switch (leftMostArrow.name)
 	    {
@@ -115,6 +83,35 @@ public class ControlAndScoreDetection : MonoBehaviour
 	    }
 	}
 
+    private bool CheckAgainstPreviousInput(float currentHorizontal, float currentVertical)
+    {
+        if (!Input.anyKey)
+        {
+            lastTimeHorizontal = 0;
+            lastTimeVertical   = 0;
+            return true;
+        }
+
+        if ((currentHorizontal != 0 && currentVertical != 0) || (currentHorizontal == 0 && currentVertical == 0))
+        {
+            lastTimeHorizontal = 0;
+            lastTimeVertical   = 0;
+            return true;
+        }
+
+        if ((lastTimeHorizontal > 0 && currentHorizontal > 0) || (lastTimeHorizontal < 0 && currentHorizontal < 0))
+        {
+            return true;
+        }
+
+        if ((lastTimeVertical > 0 && currentVertical > 0) || (lastTimeVertical < 0 && currentVertical < 0))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     private GameObject GetLeftMostActiveArrow()
     {
         if (hitArea.GetComponent<HitArea>().arrowsInHitArea.Count == 0)
@@ -123,6 +120,5 @@ public class ControlAndScoreDetection : MonoBehaviour
         }
 
         return hitArea.GetComponent<HitArea>().arrowsInHitArea.Peek();
-        //return hitArea.GetComponent<HitArea>().arrowsInHitArea.OrderBy(x => x.transform.position.x).FirstOrDefault();
     }
 }

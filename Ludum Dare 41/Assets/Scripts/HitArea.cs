@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class HitArea : MonoBehaviour
 {
     public Queue<GameObject> arrowsInHitArea;
-    //public List<GameObject> arrowsInHitArea;
 
     private void Start()
     {
