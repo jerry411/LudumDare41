@@ -20,7 +20,7 @@ public class ArrowGenerator : MonoBehaviour
 	    processor.onBeat.AddListener(onBeatDetected);
 	    processor.onSpectrum.AddListener(onSpectrum);	    
 
-	    mainSongSource.PlayDelayed(2);
+	    mainSongSource.PlayDelayed(2f);
 
 	    lastBeat = DateTime.MinValue;
 	}
