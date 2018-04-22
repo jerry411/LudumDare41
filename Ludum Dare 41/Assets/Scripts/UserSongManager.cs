@@ -15,15 +15,16 @@ public class UserSongManager : MonoBehaviour
 	private const string wwwPathToMusicFolder = "../../../UserSongs/";
 	private string[] possibleExtensions = new string[2] {"*.ogg", "*.wav"};
 
-	void Awake()
+	void Start()
 	{
-		source = GetComponent<AudioSource>();
-
-		StartCoroutine(LoadAudioClip(0));	
+		source = GetComponent<AudioSource>(); // Move
+		DisplayCustomsSongsInList();
+		SetCustomSong(1);
+		//StartCoroutine(LoadAudioClip(0));	
 	}
-	private IEnumerator LoadAudioClip(int index)
+	public IEnumerator LoadCustomAudioClip() // Move
 	{
-		string url = "file:///" + Application.dataPath + wwwPathToMusicFolder + fileNames[index];
+		string url = GameInfo.Instance.customSongUrl;
 		WWW audioClipPath = new WWW(url);
 
 		while(!audioClipPath.isDone)
@@ -58,5 +59,11 @@ public class UserSongManager : MonoBehaviour
 	private void DisplayCustomsSongsInList()
 	{
 		fileNames = GetFileNames();
+	}
+	public void SetCustomSong(int index)
+	{
+		GameInfo.Instance.isCustomSong = true;
+		string url = "file:///" + Application.dataPath + wwwPathToMusicFolder + fileNames[index];
+		GameInfo.Instance.customSongUrl = url;
 	}
 }
