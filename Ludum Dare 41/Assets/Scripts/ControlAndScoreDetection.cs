@@ -22,26 +22,31 @@ public class ControlAndScoreDetection : MonoBehaviour
 
 	void Update ()
 	{
-	    if (!Input.anyKey)
+	    float currentHorizontal = Input.GetAxis("Horizontal");
+	    float currentVertical = Input.GetAxis("Vertical");
+
+        if (!Input.anyKey)
 	    {
-            //return;
+            return;
 	    }
 
-	    if ((Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0) || (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0))
-
+	    if ((currentHorizontal != 0 && currentVertical != 0) || (currentHorizontal == 0 && currentVertical == 0))
         {
 	        return;
 	    }
 
-        if ((lastTimeHorizontal > 0 && Input.GetAxis("Horizontal") > 0) || (lastTimeHorizontal < 0 && Input.GetAxis("Horizontal") < 0))
+        if ((lastTimeHorizontal > 0 && currentHorizontal > 0) || (lastTimeHorizontal < 0 && currentHorizontal < 0))
 	    {
 	        return;
         }
 
-	    if ((lastTimeVertical > 0 && Input.GetAxis("Vertical") > 0) || (lastTimeVertical < 0 && Input.GetAxis("Vertical") < 0))
+	    if ((lastTimeVertical > 0 && currentVertical > 0) || (lastTimeVertical < 0 && currentVertical < 0))
 	    {
 	        return;
 	    }
+
+	    lastTimeHorizontal = currentHorizontal;
+	    lastTimeVertical = currentVertical;
 
         //Debug.Log(hitArea.GetComponent<HitArea>().arrowsInHitArea.Count);
 
