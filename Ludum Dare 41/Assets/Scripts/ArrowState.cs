@@ -36,8 +36,8 @@ public class ArrowState : MonoBehaviour
     {
         if (!isHit)
         {
-            stats.AddMalus();
-            stats.BreakStreak();
+            //stats.AddMalus();
+            //stats.BreakStreak();
         }
 
         hitArea.GetComponent<HitArea>().arrowsInHitArea.Dequeue();
@@ -54,13 +54,13 @@ public class ArrowState : MonoBehaviour
 
         if (goodHit)
         {
-            stats.AddToStreak();
-            stats.BreakMalus();
+            //stats.AddToStreak();
+            //stats.BreakMalus();
         }
         else
         {
-            stats.AddToStreak();
-            stats.BreakStreak();
+            //stats.AddToStreak();
+            //stats.BreakStreak();
         }
         
 
