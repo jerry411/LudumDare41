@@ -1581,14 +1581,9 @@ Prefab:
       propertyPath: speedText
       value: 
       objectReference: {fileID: 126505672}
-    - target: {fileID: 95803299084755500, guid: 8d51c08717b5cae4a92dab753dc1994c,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9b6aa9acb4610514fb248aa313319e7e, type: 2}
     - target: {fileID: 1136385790967506, guid: 8d51c08717b5cae4a92dab753dc1994c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d51c08717b5cae4a92dab753dc1994c, type: 2}
