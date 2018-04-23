@@ -11,7 +11,15 @@ public class HitArea : MonoBehaviour
     {
         arrowsInHitArea = new Queue<GameObject>();
 
-        float newDifficulty = PlayerPrefs.GetFloat("Difficulty", 0.5f);
+        float newDifficulty;
+        if (PlayerPrefs.HasKey("Difficulty"))
+        {
+            newDifficulty = PlayerPrefs.GetFloat("Difficulty");
+        }
+        else
+        {
+            newDifficulty = 0.5f;
+        }
         SetDifficulty(newDifficulty);
     }
 

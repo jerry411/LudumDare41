@@ -1,8 +1,5 @@
-﻿using System;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 
 public class DistanceCalculator : MonoBehaviour
 {
@@ -12,6 +9,9 @@ public class DistanceCalculator : MonoBehaviour
     public Vector2 lastPos;
     public Text distText;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 60803eb... Score display at EndGame scene
     public ArrowGenerator gen;
     public Text disttextEnd;
     GameObject playerCar;
@@ -20,22 +20,33 @@ public class DistanceCalculator : MonoBehaviour
     public GameObject playerCar;
     public Text songName;
 
+<<<<<<< HEAD
     private AudioSource audioSource;
 
 >>>>>>> b46a5ea36253a58b05a70e1db6dbd868fc55d331
 
     void Start ()
+=======
+	// Use this for initialization
+	void Start ()
+>>>>>>> parent of 60803eb... Score display at EndGame scene
     {
         playerCar = GameObject.FindGameObjectWithTag("Player");
         lastPos = playerCar.transform.position;
+<<<<<<< HEAD
 
         audioSource = mainSongSource.GetComponent<AudioSource>();
 
         songName.text = PlayerPrefs.GetString("SongName", "...");
     }
+=======
+	}
+>>>>>>> parent of 60803eb... Score display at EndGame scene
 	
+	// Update is called once per frame
 	void Update ()
     {
+<<<<<<< HEAD
         if (audioSource.isPlaying)
         {
             distanceTravelled += Vector2.Distance(lastPos, playerCar.transform.position);
@@ -45,9 +56,14 @@ public class DistanceCalculator : MonoBehaviour
         {
             PlayerPrefs.SetFloat("DistanceTravelled", distanceTravelled);
             SceneManager.LoadScene(3);
-            return;
-        }
+=======
+        DontDestroyOnLoad(gameObject);
 
+        if (gen.mainSongSource.isPlaying)
+            distanceTravelled += Vector2.Distance(lastPos, playerCar.transform.position);
+        else
+>>>>>>> parent of 60803eb... Score display at EndGame scene
+            return;
 
         simpleDist = ((int)(distanceTravelled)) / 1000;
         distText.text = simpleDist.ToString();

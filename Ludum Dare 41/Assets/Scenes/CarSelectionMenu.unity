@@ -1316,7 +1316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aff86b61c288b24c98431bbc37a741f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisAudio: {fileID: 2113637466}
+  audio: {fileID: 2113637466}
   playClickSoundAtInit: 1
 --- !u!1 &570649832
 GameObject:

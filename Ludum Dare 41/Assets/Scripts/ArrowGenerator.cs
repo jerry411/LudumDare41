@@ -15,10 +15,12 @@ public class ArrowGenerator : MonoBehaviour
 
     private DateTime lastBeat;
 
+    float[] currentSpectrum;
+
     void Start ()
 	{
 	    processor.onBeat.AddListener(onBeatDetected);
-	    //processor.onSpectrum.AddListener(onSpectrum);	    
+	    processor.onSpectrum.AddListener(onSpectrum);	    
 
 	    mainSongSource.PlayDelayed(2f);
 
@@ -73,7 +75,7 @@ public class ArrowGenerator : MonoBehaviour
     //This event will be called every frame while music is playing
     void onSpectrum(float[] spectrum)
     {
-        //currentSpectrum = spectrum;
+        currentSpectrum = spectrum;
 
         for (int i = 0; i < spectrum.Length; ++i)
         {

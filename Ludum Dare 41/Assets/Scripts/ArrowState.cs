@@ -53,7 +53,7 @@ public class ArrowState : MonoBehaviour
 
     public void Hit(bool goodHit)
     {
-        //Debug.Log(string.Format("HIT  {0}", goodHit));
+        Debug.Log(string.Format("HIT  {0}", goodHit));
 
         isHit = true;
         active = false;

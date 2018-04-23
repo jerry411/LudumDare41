@@ -12,10 +12,14 @@ public class EndGame : MonoBehaviour
         if (!gen.mainSongSource.isPlaying)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             loading.LoadLevel(SceneIndex);
 =======
             //SceneManager.LoadScene(SceneIndex);
 >>>>>>> b46a5ea36253a58b05a70e1db6dbd868fc55d331
+=======
+            SceneManager.LoadScene(SceneIndex);
+>>>>>>> parent of 60803eb... Score display at EndGame scene
         }
 	}
 }
