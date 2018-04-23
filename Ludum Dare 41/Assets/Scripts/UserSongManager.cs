@@ -7,7 +7,6 @@ using System.Linq;
 public class UserSongManager : MonoBehaviour 
 {
 	// Variables
-	private AudioSource source = null;
 	private List <string> fileNames = new List <string>();
 
 	// Constants
@@ -17,26 +16,8 @@ public class UserSongManager : MonoBehaviour
 
 	void Start()
 	{
-		source = GetComponent<AudioSource>();
 		DisplayCustomsSongsInList();
 		SetCustomSong(0);
-		//StartCoroutine(LoadAudioClip(0));	
-	}
-	public IEnumerator LoadCustomAudioClip()
-	{
-		string url = GameInfo.Instance.customSongUrl;
-		WWW audioClipPath = new WWW(url);
-
-		while(!audioClipPath.isDone)
-		{
-			yield return null;
-		}
-
-		source.clip = audioClipPath.GetAudioClip(true, false);
-		if (!source.isPlaying && source.clip.loadState == AudioDataLoadState.Loaded)
-		{
-			source.Play();
-		}    
 	}
 	private List <string> GetFileNames()
 	{
