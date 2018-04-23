@@ -9,6 +9,8 @@ public class UserSongManager : MonoBehaviour
 {
 	// Variables
 	private List <string> fileNames = new List <string>();
+	[SerializeField] private LoadingScreen loadingScreen;
+	[SerializeField] private GameObject canvasObj;
 
 	// Constants
 	private const string pathToMusicFolder = "../UserSongs/";
@@ -39,6 +41,7 @@ public class UserSongManager : MonoBehaviour
 	}
 	private IEnumerator LoadCustomAudioClip(int index)
 	{
+		HideUI();
 		string url = "file:///" + Application.dataPath + wwwPathToMusicFolder + fileNames[index];
 		WWW audioClipPath = new WWW(url);
 
@@ -48,7 +51,7 @@ public class UserSongManager : MonoBehaviour
 		}
 
 		GameInfo.Instance.audioClip = audioClipPath.GetAudioClip(true, false);
-		// TODO: Load Main scene...
+		loadingScreen.LoadLevel(mainSceneIndex);
 
 
 		/*
@@ -118,5 +121,9 @@ public class UserSongManager : MonoBehaviour
 		{
 			customSongButtonList.Add(customSongButton5);
 		}
+	}
+	private void HideUI()
+	{
+		canvasObj.SetActive(false);
 	}
 }
