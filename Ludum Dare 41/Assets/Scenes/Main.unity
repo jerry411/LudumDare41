@@ -2221,9 +2221,6 @@ MonoBehaviour:
   lastPos: {x: 0, y: 0}
   distText: {fileID: 144194932}
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 60803eb... Score display at EndGame scene
   gen: {fileID: 240287933}
   disttextEnd: {fileID: 0}
 =======
@@ -2991,7 +2988,6 @@ GameObject:
   - component: {fileID: 1698861518}
   - component: {fileID: 1698861519}
   - component: {fileID: 1698861520}
-  - component: {fileID: 1698861521}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3119,9 +3115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 60803eb... Score display at EndGame scene
 --- !u!114 &1698861521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3135,7 +3128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gen: {fileID: 240287933}
   SceneIndex: 3
-<<<<<<< HEAD
   loading: {fileID: 114382660}
 --- !u!224 &1713542429 stripped
 RectTransform:
@@ -3144,8 +3136,6 @@ RectTransform:
   m_PrefabInternal: {fileID: 1616461161}
 =======
 >>>>>>> b46a5ea36253a58b05a70e1db6dbd868fc55d331
-=======
->>>>>>> parent of 60803eb... Score display at EndGame scene
 --- !u!1 &1734094040
 GameObject:
   m_ObjectHideFlags: 0
