@@ -48,6 +48,8 @@ public class UserSongManager : MonoBehaviour
 		}
 
 		GameInfo.Instance.audioClip = audioClipPath.GetAudioClip(true, false);
+		// TODO: Load Main scene...
+
 
 		/*
 		source.clip = audioClipPath.GetAudioClip(true, false);
@@ -78,6 +80,7 @@ public class UserSongManager : MonoBehaviour
 	private void DisplayCustomsSongsInList()
 	{
 		fileNames = GetFileNames();
+		Debug.Log(fileNames.Count);
 		for(int i = 0; i < fileNames.Count; i++)
 		{
 			if(i > customSongLimit)
@@ -85,6 +88,7 @@ public class UserSongManager : MonoBehaviour
 				return;
 			}
 			customSongButtonList[i].SetActive(true);
+			customSongButtonList[i].GetComponentInChildren<Text>().text = fileNames[i];
 		}
 	}
 	public void LoadSongFromRessources(AudioClip clip)
