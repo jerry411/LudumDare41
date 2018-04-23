@@ -14,6 +14,8 @@ public class AccelerationCorrectArrows : MonoBehaviour
 
     public Animator animator;
 
+    public GameObject boost;
+    public GameObject malus;
     //bool aceleing;
     //bool deceilng;
 
@@ -74,6 +76,7 @@ public class AccelerationCorrectArrows : MonoBehaviour
         kart.StreakBoost(kartGO);
         animator.SetBool("isBoosted", true);
         Debug.Log("Boosted!");
+        StartCoroutine(displayUi());
         yield return new WaitForSeconds(10f);
         
         kart.StreakSlowDown(kartGO);
@@ -86,10 +89,24 @@ public class AccelerationCorrectArrows : MonoBehaviour
      
         kart.MalusSlow(kartGO);
         Debug.Log("Slowed!!");
+        StartCoroutine(displayUi1());
         yield return new WaitForSeconds(10f);
         
 
         kart.MalusFastAgain(kartGO);
     }
 
+    IEnumerator displayUi()
+    {
+        boost.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        boost.SetActive(false);
+    }
+
+    IEnumerator displayUi1()
+    {
+        malus.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        malus.SetActive(false);
+    }
 }
