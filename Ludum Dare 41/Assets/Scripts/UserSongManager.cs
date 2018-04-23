@@ -17,12 +17,12 @@ public class UserSongManager : MonoBehaviour
 
 	void Start()
 	{
-		source = GetComponent<AudioSource>(); // Move
+		source = GetComponent<AudioSource>();
 		DisplayCustomsSongsInList();
-		SetCustomSong(1);
+		SetCustomSong(0);
 		//StartCoroutine(LoadAudioClip(0));	
 	}
-	public IEnumerator LoadCustomAudioClip() // Move
+	public IEnumerator LoadCustomAudioClip()
 	{
 		string url = GameInfo.Instance.customSongUrl;
 		WWW audioClipPath = new WWW(url);
