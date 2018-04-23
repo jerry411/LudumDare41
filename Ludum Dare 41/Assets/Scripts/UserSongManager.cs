@@ -50,7 +50,9 @@ public class UserSongManager : MonoBehaviour
 			yield return null;
 		}
 
-		GameInfo.Instance.audioClip = audioClipPath.GetAudioClip(true, false);
+	    PlayerPrefs.SetString("SongName", fileNames[index]);
+
+        GameInfo.Instance.audioClip = audioClipPath.GetAudioClip(true, false);
 		loadingScreen.LoadLevel(mainSceneIndex);
 	}
 	private List <string> GetFileNames()
@@ -88,7 +90,8 @@ public class UserSongManager : MonoBehaviour
 	public void LoadSongFromRessources(AudioClip clip)
 	{
 		GameInfo.Instance.audioClip = clip;
-	}
+	    PlayerPrefs.SetString("SongName", clip.name);
+    }
 	private void addCustomSongButtonsToList()
 	{
 		// Seriously... I was kind of desperate to get this done...
