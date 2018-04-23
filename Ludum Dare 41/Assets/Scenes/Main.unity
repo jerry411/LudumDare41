@@ -187,12 +187,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 15579853}
---- !u!114 &114382660 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114377756342855136, guid: 5a6966eb0511a564ab2911505d0fa156,
-    type: 2}
-  m_PrefabInternal: {fileID: 1616461161}
-  m_Script: {fileID: 11500000, guid: 2c67f2278265f2240843962616f2fd23, type: 3}
 --- !u!1 &118248294
 GameObject:
   m_ObjectHideFlags: 0
@@ -2987,7 +2981,6 @@ GameObject:
   - component: {fileID: 1698861518}
   - component: {fileID: 1698861519}
   - component: {fileID: 1698861520}
-  - component: {fileID: 1698861521}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3114,20 +3107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70741f829feb11f4983699264b8a6c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1698861521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1698861512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a559907f79a8ca040aa1426b173d82e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gen: {fileID: 240287933}
-  SceneIndex: 3
-  loading: {fileID: 114382660}
 --- !u!224 &1713542429 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224090533580160610, guid: 5a6966eb0511a564ab2911505d0fa156,
