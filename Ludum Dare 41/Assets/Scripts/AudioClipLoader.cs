@@ -33,5 +33,9 @@ public class AudioClipLoader : MonoBehaviour
 			primarySource.Play();
 		}    
 		secondarySource.clip = desiredAudioClip;
+		if (!secondarySource.isPlaying && secondarySource.clip.loadState == AudioDataLoadState.Loaded)
+		{
+			primarySource.Play();
+		}    
 	}
 }
