@@ -10,11 +10,15 @@ public class AudioClipLoader : MonoBehaviour
 
 	void Start()
 	{
-		SetAudioClips();
+		SetAudioClip(primarySource);
+		SetAudioClip(secondarySource);
 	}
-	private void SetAudioClips()
+	private void SetAudioClip(AudioSource source)
 	{
-		primarySource.clip = GameInfo.Instance.audioClip;
-		secondarySource.clip = GameInfo.Instance.audioClip;
+		source.clip = GameInfo.Instance.audioClip;
+		if (!source.isPlaying && source.clip.loadState == AudioDataLoadState.Loaded)
+		{
+			source.Play();
+		}    
 	}
 }

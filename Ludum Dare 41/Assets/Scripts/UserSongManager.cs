@@ -52,15 +52,6 @@ public class UserSongManager : MonoBehaviour
 
 		GameInfo.Instance.audioClip = audioClipPath.GetAudioClip(true, false);
 		loadingScreen.LoadLevel(mainSceneIndex);
-
-
-		/*
-		source.clip = audioClipPath.GetAudioClip(true, false);
-		if (!source.isPlaying && source.clip.loadState == AudioDataLoadState.Loaded)
-		{
-			source.Play();
-		}    
-		*/
 	}
 	private List <string> GetFileNames()
 	{
