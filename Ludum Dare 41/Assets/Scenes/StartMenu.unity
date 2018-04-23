@@ -702,6 +702,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: You can choose predefined song or any other song  in .ogg or .wav format.
+    You add your song just by putting it into "UserSongs" folder.
 --- !u!222 &132518537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1144,6 +1145,10 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128759996799626, guid: 5a6966eb0511a564ab2911505d0fa156, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a6966eb0511a564ab2911505d0fa156, type: 2}
@@ -2514,7 +2519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &666308169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2949,8 +2954,8 @@ RectTransform:
   m_Father: {fileID: 579887083}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3731,7 +3736,10 @@ MonoBehaviour:
 
 
     When you miss arrow or hit wrong key, you lost bonus to streak and risk slowing
-    down your car!'
+    down your car!
+
+
+    Good luck!'
 --- !u!222 &1081784986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5426,7 +5434,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
