@@ -72,12 +72,12 @@ public class AccelerationCorrectArrows : MonoBehaviour
     {
 
         kart.StreakBoost(kartGO);
-        animator.SetBool(0, true);
+        animator.SetBool("isBoosted", true);
         Debug.Log("Boosted!");
         yield return new WaitForSeconds(10f);
         
         kart.StreakSlowDown(kartGO);
-        animator.SetBool(0, false);
+        animator.SetBool("isBoosted", false);
 
     }
 

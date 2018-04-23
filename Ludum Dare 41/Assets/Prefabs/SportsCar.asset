@@ -14,4 +14,3 @@ MonoBehaviour:
   thrust: 15
   accelerationThrust: 5
   malusThrust: -10
-  animator: {fileID: 95803299084755500, guid: e655e6dd574559447bdb0c36858d5b94, type: 2}

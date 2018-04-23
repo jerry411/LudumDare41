@@ -13,7 +13,7 @@ public class Karts : ScriptableObject {
     public void MoveAhead(GameObject go)
     {
         rb = go.GetComponent<Rigidbody2D>();
-        rb.AddForce(rb.gameObject.transform.right * thrust);
+        rb.AddForce(go.transform.right * thrust);
     }
 
     public void StreakBoost(GameObject go)
