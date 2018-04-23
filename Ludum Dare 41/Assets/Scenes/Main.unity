@@ -145,7 +145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 37.800003, y: 33.899902}
+  m_AnchoredPosition: {x: 37.8, y: 33.9}
   m_SizeDelta: {x: 275.58, y: 25.48}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &15579855
@@ -308,7 +308,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 80
-    m_Alignment: 7
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -338,8 +338,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1169.88, y: 66.2}
-  m_SizeDelta: {x: 104.82, y: 75.25}
+  m_AnchoredPosition: {x: 1169, y: 67.465}
+  m_SizeDelta: {x: 187.7, y: 134.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &240287932
 Prefab:
@@ -2220,14 +2220,8 @@ MonoBehaviour:
   simpleDist: 0
   lastPos: {x: 0, y: 0}
   distText: {fileID: 144194932}
-<<<<<<< HEAD
   gen: {fileID: 240287933}
   disttextEnd: {fileID: 0}
-=======
-  mainSongSource: {fileID: 131667775}
-  playerCar: {fileID: 813457128}
-  songName: {fileID: 15579855}
->>>>>>> b46a5ea36253a58b05a70e1db6dbd868fc55d331
 --- !u!4 &1258345284
 Transform:
   m_ObjectHideFlags: 0
@@ -2341,8 +2335,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.5, y: 70.9}
-  m_SizeDelta: {x: 130, y: -143.8}
+  m_AnchoredPosition: {x: -0.5, y: -0.49999237}
+  m_SizeDelta: {x: 134.19995, y: -1.0000153}
   m_Pivot: {x: 0.49999994, y: 0.5}
 --- !u!61 &1344786655
 BoxCollider2D:
@@ -2356,7 +2350,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 799.0901}
+  m_Offset: {x: 0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2367,7 +2361,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 130, y: 2162.9927}
+  m_Size: {x: 134.2, y: 3761.1729}
   m_EdgeRadius: 0
 --- !u!114 &1344786656
 MonoBehaviour:
@@ -2988,6 +2982,7 @@ GameObject:
   - component: {fileID: 1698861518}
   - component: {fileID: 1698861519}
   - component: {fileID: 1698861520}
+  - component: {fileID: 1698861521}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3114,7 +3109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70741f829feb11f4983699264b8a6c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
 --- !u!114 &1698861521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3134,8 +3128,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224090533580160610, guid: 5a6966eb0511a564ab2911505d0fa156,
     type: 2}
   m_PrefabInternal: {fileID: 1616461161}
-=======
->>>>>>> b46a5ea36253a58b05a70e1db6dbd868fc55d331
 --- !u!1 &1734094040
 GameObject:
   m_ObjectHideFlags: 0

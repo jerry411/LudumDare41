@@ -1,31 +1,28 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EndScreenScores : MonoBehaviour
 {
+    public DistanceCalculator distCalc;
     public Text scoreText;
     public Text highScoreText;
 
     private void Start()
     {
-             
-        if (PlayerPrefs.GetFloat("DistanceTravelled", 0f) > PlayerPrefs.GetFloat("HighScore", 0f))
-        {
-            PlayerPrefs.SetFloat("HighScore", PlayerPrefs.GetFloat("DistanceTravelled"));
-        }
-
-        scoreText.text = String.Format("{0:0.00}", PlayerPrefs.GetFloat("DistanceTravelled", 0f) / 1000f);
-        highScoreText.text = String.Format("{0:0.00}", PlayerPrefs.GetFloat("HighScore", 0f) / 1000f);
-
-        PlayerPrefs.Save();
+        distCalc = GameObject.FindGameObjectWithTag("DistanceCalculator").GetComponent<DistanceCalculator>();
+        highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
-
-    public void ResetHighScore()
+    // Update is called once per frame
+    void Update ()
     {
-        highScoreText.text = String.Format("{0:0.00}", 0f);
-        PlayerPrefs.SetFloat("HighScore", 0f);
-    }
+        scoreText.text = distCalc.simpleDist.ToString();
+
+        if(distCalc.simpleDist > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", distCalc.simpleDist);
+            highScoreText.text = distCalc.simpleDist.ToString();
+        }
+	}
 }
