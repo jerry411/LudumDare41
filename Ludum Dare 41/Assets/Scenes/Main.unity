@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   car1: {fileID: 813457128}
   car2: {fileID: 2116342996}
-  car3: {fileID: 0}
+  car3: {fileID: 988190091}
 --- !u!1 &610147750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,6 +1596,11 @@ Prefab:
 --- !u!4 &988190090 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4141177420982592, guid: 8d51c08717b5cae4a92dab753dc1994c,
+    type: 2}
+  m_PrefabInternal: {fileID: 988190089}
+--- !u!1 &988190091 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1136385790967506, guid: 8d51c08717b5cae4a92dab753dc1994c,
     type: 2}
   m_PrefabInternal: {fileID: 988190089}
 --- !u!1 &1017581411
