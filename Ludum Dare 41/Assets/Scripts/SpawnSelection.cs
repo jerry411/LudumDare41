@@ -7,8 +7,6 @@ public class SpawnSelection : MonoBehaviour {
     public GameObject car1;
     public GameObject car2;
     public GameObject car3;
-
-    public DistanceCalculator calc;
 	
     // Use this for initialization
 	void Awake ()
@@ -19,19 +17,16 @@ public class SpawnSelection : MonoBehaviour {
                 car1.SetActive(true);
                 GameObject.Destroy(car2);
                 GameObject.Destroy(car3);
-                calc.SetPlayerCar(car1);
                 break;
             case 2:
                 GameObject.Destroy(car1);
                 car2.SetActive(true);
                 GameObject.Destroy(car3);
-                calc.SetPlayerCar(car2);
                 break;
             case 3:
                 GameObject.Destroy(car1);
                 GameObject.Destroy(car2);
                 car3.SetActive(true);
-                calc.SetPlayerCar(car3);
                 break;
         }
 	}

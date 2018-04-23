@@ -400,11 +400,6 @@ Prefab:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 82822696590386984, guid: c3782bfd0419ae349a6d1f5c9a2a1769,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1cc22ef63f0da344a834a215545e7ec6, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3782bfd0419ae349a6d1f5c9a2a1769, type: 2}
   m_IsPrefabParent: 0
@@ -1059,7 +1054,6 @@ MonoBehaviour:
   car1: {fileID: 813457128}
   car2: {fileID: 2116342996}
   car3: {fileID: 0}
-  calc: {fileID: 1258345283}
 --- !u!1 &610147750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,11 +2602,6 @@ Prefab:
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 82975840050116672, guid: 81994f6ac159c2a43868aa0088a8c9ae,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1cc22ef63f0da344a834a215545e7ec6, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81994f6ac159c2a43868aa0088a8c9ae, type: 2}
   m_IsPrefabParent: 0
