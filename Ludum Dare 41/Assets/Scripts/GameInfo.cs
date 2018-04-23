@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameInfo : MonoBehaviour 
 {
+	// Singleton
 	public static GameInfo Instance { get; set; }
 
 	public AudioClip audioClip;

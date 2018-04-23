@@ -15,12 +15,23 @@ public class UserSongManager : MonoBehaviour
 	private const string wwwPathToMusicFolder = "../../../UserSongs/";
 	private string[] possibleExtensions = new string[2] {"*.ogg", "*.wav"};
 	private const int mainSceneIndex = 2;
+
+	// CUSTOM SONG SELECTION
+	// This is bad practice
+	// I didn't have time
+	// Don't judge me...
+	[SerializeField] GameObject customSongButton1;
+	[SerializeField] GameObject customSongButton2;
+	[SerializeField] GameObject customSongButton3;
+	[SerializeField] GameObject customSongButton4;
+	[SerializeField] GameObject customSongButton5;
+	List <GameObject> customSongButtonList = new List <GameObject>();
 	private const int customSongLimit = 5;
 
 	void Start()
 	{
+		addCustomSongButtonsToList();
 		DisplayCustomsSongsInList();
-		SetCustomSong(0);
 	}
 	public void LoadCustomAudioClipWrapper(int index)
 	{
@@ -73,19 +84,35 @@ public class UserSongManager : MonoBehaviour
 			{
 				return;
 			}
-			// activate button with index i
+			customSongButtonList[i].SetActive(true);
 		}
-	}
-	public void SetCustomSong(int index)
-	{
-		/*
-		GameInfo.Instance.isCustomSong = true;
-		string url = "file:///" + Application.dataPath + wwwPathToMusicFolder + fileNames[index];
-		GameInfo.Instance.customSongUrl = url;
-		*/
 	}
 	public void LoadSongFromRessources(AudioClip clip)
 	{
 		GameInfo.Instance.audioClip = clip;
+	}
+	private void addCustomSongButtonsToList()
+	{
+		// Seriously... I was kind of desperate to get this done...
+		if(customSongButton1 != null)
+		{
+			customSongButtonList.Add(customSongButton1);
+		}
+		if(customSongButton2 != null)
+		{
+			customSongButtonList.Add(customSongButton2);
+		}
+		if(customSongButton3 != null)
+		{
+			customSongButtonList.Add(customSongButton3);
+		}
+		if(customSongButton4 != null)
+		{
+			customSongButtonList.Add(customSongButton4);
+		}
+		if(customSongButton5 != null)
+		{
+			customSongButtonList.Add(customSongButton5);
+		}
 	}
 }
