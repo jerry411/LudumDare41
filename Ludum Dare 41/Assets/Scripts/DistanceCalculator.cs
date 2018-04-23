@@ -32,18 +32,10 @@ public class DistanceCalculator : MonoBehaviour
         if (audioSource.isPlaying)
         {
             distanceTravelled += Vector2.Distance(lastPos, playerCar.transform.position);
-        }            
-        else if ((Math.Abs(audioSource.time - audioSource.clip.length) < 0.001))
-        {
-            Debug.Log(distanceTravelled);
-            PlayerPrefs.SetFloat("DistanceTravelled", distanceTravelled);
-            SceneManager.LoadScene(3);
-            return;
         }
 
-        if (Input.GetKeyDown(KeyCode.F3))   // DEBUG ONLY
+        if ((Math.Abs(audioSource.time - audioSource.clip.length) < 0.001) || Input.GetKeyDown(KeyCode.F3))    //F3 for DEBUG only
         {
-            Debug.Log(distanceTravelled);
             PlayerPrefs.SetFloat("DistanceTravelled", distanceTravelled);
             SceneManager.LoadScene(3);
             return;

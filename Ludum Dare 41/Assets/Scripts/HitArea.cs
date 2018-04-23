@@ -38,7 +38,7 @@ public class HitArea : MonoBehaviour
 
     void SetDifficulty(float difficulty)
     {
-        Debug.Log(difficulty);
+        //Debug.Log(difficulty);
 
         float newWidth = maxWidth - ((maxWidth - minWidth) * difficulty);
 
