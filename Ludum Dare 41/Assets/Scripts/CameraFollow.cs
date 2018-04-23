@@ -12,7 +12,6 @@ public class CameraFollow : MonoBehaviour {
     private void Start()
     {
         cam = GetComponent<Camera>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
