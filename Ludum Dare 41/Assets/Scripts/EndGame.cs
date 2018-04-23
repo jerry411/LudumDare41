@@ -10,7 +10,7 @@ public class EndGame : MonoBehaviour
     {
         if (!gen.mainSongSource.isPlaying)
         {
-            SceneManager.LoadScene(SceneIndex);
+            //SceneManager.LoadScene(SceneIndex);
         }
 	}
 }
