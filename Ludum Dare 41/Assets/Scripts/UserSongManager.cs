@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Linq;
+using UnityEngine.UI;
 
 public class UserSongManager : MonoBehaviour 
 {
@@ -14,6 +15,7 @@ public class UserSongManager : MonoBehaviour
 	private const string wwwPathToMusicFolder = "../../../UserSongs/";
 	private string[] possibleExtensions = new string[2] {"*.ogg", "*.wav"};
 	private const int mainSceneIndex = 2;
+	private const int customSongLimit = 5;
 
 	void Start()
 	{
@@ -64,8 +66,15 @@ public class UserSongManager : MonoBehaviour
 	}
 	private void DisplayCustomsSongsInList()
 	{
-		// When the user hits the button, the ui should disappear so the they cannot click another button.
 		fileNames = GetFileNames();
+		for(int i = 0; i < fileNames.Count; i++)
+		{
+			if(i > customSongLimit)
+			{
+				return;
+			}
+			// activate button with index i
+		}
 	}
 	public void SetCustomSong(int index)
 	{
