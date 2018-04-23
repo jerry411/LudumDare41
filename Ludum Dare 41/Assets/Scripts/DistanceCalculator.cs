@@ -12,8 +12,8 @@ public class DistanceCalculator : MonoBehaviour
     public Vector2 lastPos;
     public Text distText;
     public GameObject mainSongSource;
-    public Text disttextEnd;
     public GameObject playerCar;
+    public Text songName;
 
     private AudioSource audioSource;
 
@@ -23,12 +23,12 @@ public class DistanceCalculator : MonoBehaviour
         lastPos = playerCar.transform.position;
 
         audioSource = mainSongSource.GetComponent<AudioSource>();
+
+        songName.text = PlayerPrefs.GetString("SongName", "...");
     }
 	
 	void Update ()
     {
-        //DontDestroyOnLoad(gameObject);
-
         if (audioSource.isPlaying)
         {
             distanceTravelled += Vector2.Distance(lastPos, playerCar.transform.position);

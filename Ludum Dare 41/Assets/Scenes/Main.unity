@@ -302,7 +302,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 80
-    m_Alignment: 4
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -332,8 +332,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1169.88, y: 73.50995}
-  m_SizeDelta: {x: 113.51, y: 79.22}
+  m_AnchoredPosition: {x: 1169.88, y: 66.2}
+  m_SizeDelta: {x: 104.82, y: 75.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &240287932
 Prefab:
@@ -2170,8 +2170,8 @@ MonoBehaviour:
   lastPos: {x: 0, y: 0}
   distText: {fileID: 144194932}
   mainSongSource: {fileID: 131667775}
-  disttextEnd: {fileID: 0}
   playerCar: {fileID: 813457128}
+  songName: {fileID: 15579855}
 --- !u!4 &1258345284
 Transform:
   m_ObjectHideFlags: 0
