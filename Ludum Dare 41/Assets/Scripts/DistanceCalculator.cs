@@ -20,8 +20,18 @@ public class DistanceCalculator : MonoBehaviour
 
     void Start ()
     {
-        playerCar = GameObject.FindGameObjectWithTag("Player");
-        lastPos = playerCar.transform.position;
+        /*GameObject[] allCars = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject car in allCars)
+        {
+            if (car != null)
+            {
+                playerCar = car;
+                break;
+            }
+        }*/
+
+        //playerCar = GameObject.FindGameObjectWithTag("Player");
+        //lastPos = playerCar.transform.position;
 
         audioSource = mainSongSource.GetComponent<AudioSource>();
 
@@ -30,6 +40,11 @@ public class DistanceCalculator : MonoBehaviour
 	
 	void Update ()
     {
+        if (playerCar == null)
+        {
+            return;
+        }
+
         if (audioSource.isPlaying)
         {
             distanceTravelled += Vector2.Distance(lastPos, playerCar.transform.position);
@@ -46,4 +61,10 @@ public class DistanceCalculator : MonoBehaviour
         simpleDist = ((int)(distanceTravelled)) / 1000;
         distText.text = simpleDist.ToString();
 	}
+
+    public void SetPlayerCar(GameObject car)
+    {
+        playerCar = car;
+        lastPos = playerCar.transform.position;
+    }
 }
