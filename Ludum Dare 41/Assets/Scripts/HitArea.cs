@@ -1,13 +1,26 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class HitArea : MonoBehaviour
 {
     public Queue<GameObject> arrowsInHitArea;
 
-    private void Start()
+    void Start()
     {
         arrowsInHitArea = new Queue<GameObject>();
+
+        float newDifficulty;
+        if (PlayerPrefs.HasKey("Difficulty"))
+        {
+            newDifficulty = PlayerPrefs.GetFloat("Difficulty");
+        }
+        else
+        {
+            newDifficulty = 0.5f;
+        }
+        SetDifficulty(newDifficulty);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -26,5 +39,21 @@ public class HitArea : MonoBehaviour
 
         other.gameObject.GetComponent<ArrowState>().GotAfterHitArea();
         other.gameObject.GetComponent<ArrowState>().isInHitArea = false;
+    }
+
+    private float maxWidth = 250;
+    private float minWidth = 50;
+
+    void SetDifficulty(float difficulty)
+    {
+        Debug.Log(difficulty);
+
+        float newWidth = maxWidth - ((maxWidth - minWidth) * difficulty);
+
+        RectTransform rectTransform = this.GetComponent<RectTransform>();
+        rectTransform.sizeDelta = new Vector2(newWidth, rectTransform.sizeDelta.y);
+
+        BoxCollider2D thisCollider = this.GetComponent<BoxCollider2D>();
+        thisCollider.size = new Vector2(newWidth, thisCollider.size.y); ;
     }
 }
