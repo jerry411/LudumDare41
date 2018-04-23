@@ -15,8 +15,6 @@ public class CameraFollow : MonoBehaviour {
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-
     void FixedUpdate()
     {
         if (target)
@@ -28,4 +26,6 @@ public class CameraFollow : MonoBehaviour {
         }
 
     }
+
+
 }
