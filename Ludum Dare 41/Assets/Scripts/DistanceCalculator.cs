@@ -1,5 +1,8 @@
-﻿using UnityEngine.UI;
+﻿using System;
+using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class DistanceCalculator : MonoBehaviour
 {
@@ -8,26 +11,43 @@ public class DistanceCalculator : MonoBehaviour
     public int simpleDist;
     public Vector2 lastPos;
     public Text distText;
+<<<<<<< HEAD
     public ArrowGenerator gen;
     public Text disttextEnd;
     GameObject playerCar;
+=======
+    public GameObject mainSongSource;
+    public GameObject playerCar;
+    public Text songName;
 
-	// Use this for initialization
-	void Start ()
+    private AudioSource audioSource;
+
+>>>>>>> b46a5ea36253a58b05a70e1db6dbd868fc55d331
+
+    void Start ()
     {
         playerCar = GameObject.FindGameObjectWithTag("Player");
         lastPos = playerCar.transform.position;
-	}
+
+        audioSource = mainSongSource.GetComponent<AudioSource>();
+
+        songName.text = PlayerPrefs.GetString("SongName", "...");
+    }
 	
-	// Update is called once per frame
 	void Update ()
     {
-        DontDestroyOnLoad(gameObject);
-
-        if (gen.mainSongSource.isPlaying)
+        if (audioSource.isPlaying)
+        {
             distanceTravelled += Vector2.Distance(lastPos, playerCar.transform.position);
-        else
+        }
+
+        if ((Math.Abs(audioSource.time - audioSource.clip.length) < 0.001) || Input.GetKeyDown(KeyCode.F3))    //F3 for DEBUG only
+        {
+            PlayerPrefs.SetFloat("DistanceTravelled", distanceTravelled);
+            SceneManager.LoadScene(3);
             return;
+        }
+
 
         simpleDist = ((int)(distanceTravelled)) / 1000;
         distText.text = simpleDist.ToString();

@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class ButtonSound : MonoBehaviour
 {
-    public AudioSource audio;
+    public AudioSource thisAudio;
     public bool playClickSoundAtInit = false;
 
     private void Start()
     {
         if (playClickSoundAtInit)
         {
-            audio.Play();
+            thisAudio.Play();
         }
     }
 
     public void playSound()
     {
-        audio.Play();
+        thisAudio.Play();
     }
 }
