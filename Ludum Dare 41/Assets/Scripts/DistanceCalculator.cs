@@ -14,7 +14,6 @@ public class DistanceCalculator : MonoBehaviour
 <<<<<<< HEAD
     public ArrowGenerator gen;
     public Text disttextEnd;
-<<<<<<< HEAD
     GameObject playerCar;
 =======
     public GameObject mainSongSource;
@@ -24,12 +23,10 @@ public class DistanceCalculator : MonoBehaviour
     private AudioSource audioSource;
 
 >>>>>>> b46a5ea36253a58b05a70e1db6dbd868fc55d331
-=======
-    public GameObject playerCar;
->>>>>>> parent of a91eedb... Changed a lot of stuff
 
     void Start ()
     {
+        playerCar = GameObject.FindGameObjectWithTag("Player");
         lastPos = playerCar.transform.position;
 
         audioSource = mainSongSource.GetComponent<AudioSource>();
