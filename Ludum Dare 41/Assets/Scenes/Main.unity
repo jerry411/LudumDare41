@@ -409,6 +409,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 240287932}
   m_Script: {fileID: 11500000, guid: 15c76c93fbc351b49b0f10fbc84fd658, type: 3}
+--- !u!82 &240287934 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82822696590386984, guid: c3782bfd0419ae349a6d1f5c9a2a1769,
+    type: 2}
+  m_PrefabInternal: {fileID: 240287932}
 --- !u!1 &245823175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,6 +2986,7 @@ GameObject:
   - component: {fileID: 1698861518}
   - component: {fileID: 1698861519}
   - component: {fileID: 1698861520}
+  - component: {fileID: 1698861521}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3107,6 +3113,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70741f829feb11f4983699264b8a6c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1698861521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698861512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6c12cd956444ae687a704992bced0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primarySource: {fileID: 1375604130}
+  secondarySource: {fileID: 240287934}
 --- !u!224 &1713542429 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224090533580160610, guid: 5a6966eb0511a564ab2911505d0fa156,
