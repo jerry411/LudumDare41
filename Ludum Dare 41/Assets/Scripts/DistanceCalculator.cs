@@ -10,11 +10,12 @@ public class DistanceCalculator : MonoBehaviour
     public Text distText;
     public ArrowGenerator gen;
     public Text disttextEnd;
-    public GameObject playerCar;
+    GameObject playerCar;
 
 	// Use this for initialization
 	void Start ()
     {
+        playerCar = GameObject.FindGameObjectWithTag("Player");
         lastPos = playerCar.transform.position;
 	}
 	
