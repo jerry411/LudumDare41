@@ -291,6 +291,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1471194402239530, guid: c3782bfd0419ae349a6d1f5c9a2a1769,
     type: 2}
   m_PrefabInternal: {fileID: 240287932}
+--- !u!82 &288305100 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82822696590386984, guid: c3782bfd0419ae349a6d1f5c9a2a1769,
+    type: 2}
+  m_PrefabInternal: {fileID: 240287932}
 --- !u!1 &324258731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,6 +1950,11 @@ Prefab:
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82975840050116672, guid: 81994f6ac159c2a43868aa0088a8c9ae,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81994f6ac159c2a43868aa0088a8c9ae, type: 2}
   m_IsPrefabParent: 0
@@ -2195,6 +2205,7 @@ GameObject:
   - component: {fileID: 1698861518}
   - component: {fileID: 1698861519}
   - component: {fileID: 1698861520}
+  - component: {fileID: 1698861521}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2319,6 +2330,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70741f829feb11f4983699264b8a6c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1698861521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698861512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6c12cd956444ae687a704992bced0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primarySource: {fileID: 1375604130}
+  secondarySource: {fileID: 288305100}
 --- !u!1 &1734094040
 GameObject:
   m_ObjectHideFlags: 0
