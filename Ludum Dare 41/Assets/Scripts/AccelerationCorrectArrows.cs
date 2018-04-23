@@ -109,10 +109,4 @@ public class AccelerationCorrectArrows : MonoBehaviour
         yield return new WaitForSeconds(2f);
         malus.SetActive(false);
     }
-
-    private void Start()
-    {
-        kartGO = GameObject.FindGameObjectWithTag("Player");
-        animator = kartGO.GetComponent<Animator>();
-    }
 }

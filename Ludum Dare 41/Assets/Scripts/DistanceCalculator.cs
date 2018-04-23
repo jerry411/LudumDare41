@@ -11,18 +11,12 @@ public class DistanceCalculator : MonoBehaviour
     public int simpleDist;
     public Vector2 lastPos;
     public Text distText;
-<<<<<<< HEAD
-    public ArrowGenerator gen;
-    public Text disttextEnd;
-    GameObject playerCar;
-=======
     public GameObject mainSongSource;
     public GameObject playerCar;
     public Text songName;
 
     private AudioSource audioSource;
 
->>>>>>> b46a5ea36253a58b05a70e1db6dbd868fc55d331
 
     void Start ()
     {
