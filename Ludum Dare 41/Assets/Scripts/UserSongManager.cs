@@ -13,11 +13,36 @@ public class UserSongManager : MonoBehaviour
 	private const string pathToMusicFolder = "../UserSongs/";
 	private const string wwwPathToMusicFolder = "../../../UserSongs/";
 	private string[] possibleExtensions = new string[2] {"*.ogg", "*.wav"};
+	private const int mainSceneIndex = 2;
 
 	void Start()
 	{
 		DisplayCustomsSongsInList();
 		SetCustomSong(0);
+	}
+	public void LoadCustomAudioClipWrapper(int index)
+	{
+		StartCoroutine(LoadCustomAudioClip(index));
+	}
+	private IEnumerator LoadCustomAudioClip(int index)
+	{
+		string url = "file:///" + Application.dataPath + wwwPathToMusicFolder + fileNames[index];
+		WWW audioClipPath = new WWW(url);
+
+		while(!audioClipPath.isDone)
+		{
+			yield return null;
+		}
+
+		GameInfo.Instance.audioClip = audioClipPath.GetAudioClip(true, false);
+
+		/*
+		source.clip = audioClipPath.GetAudioClip(true, false);
+		if (!source.isPlaying && source.clip.loadState == AudioDataLoadState.Loaded)
+		{
+			source.Play();
+		}    
+		*/
 	}
 	private List <string> GetFileNames()
 	{
@@ -39,12 +64,19 @@ public class UserSongManager : MonoBehaviour
 	}
 	private void DisplayCustomsSongsInList()
 	{
+		// When the user hits the button, the ui should disappear so the they cannot click another button.
 		fileNames = GetFileNames();
 	}
 	public void SetCustomSong(int index)
 	{
+		/*
 		GameInfo.Instance.isCustomSong = true;
 		string url = "file:///" + Application.dataPath + wwwPathToMusicFolder + fileNames[index];
 		GameInfo.Instance.customSongUrl = url;
+		*/
+	}
+	public void LoadSongFromRessources(AudioClip clip)
+	{
+		GameInfo.Instance.audioClip = clip;
 	}
 }

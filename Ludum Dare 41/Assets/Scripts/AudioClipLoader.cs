@@ -10,32 +10,11 @@ public class AudioClipLoader : MonoBehaviour
 
 	void Start()
 	{
-		if(GameInfo.Instance.isCustomSong)
-		{
-			StartCoroutine(LoadCustomAudioClip());
-		}
+		SetAudioClips();
 	}
-	public IEnumerator LoadCustomAudioClip()
+	private void SetAudioClips()
 	{
-		string url = GameInfo.Instance.customSongUrl;
-		WWW audioClipPath = new WWW(url);
-
-		while(!audioClipPath.isDone)
-		{
-			yield return null;
-		}
-
-
-		AudioClip desiredAudioClip = audioClipPath.GetAudioClip(true, false);
-		primarySource.clip = desiredAudioClip;
-		if (!primarySource.isPlaying && primarySource.clip.loadState == AudioDataLoadState.Loaded)
-		{
-			primarySource.Play();
-		}    
-		secondarySource.clip = desiredAudioClip;
-		if (!secondarySource.isPlaying && secondarySource.clip.loadState == AudioDataLoadState.Loaded)
-		{
-			primarySource.Play();
-		}    
+		primarySource.clip = GameInfo.Instance.audioClip;
+		secondarySource.clip = GameInfo.Instance.audioClip;
 	}
 }
