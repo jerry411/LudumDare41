@@ -27,7 +27,7 @@ public class ParallaxFloor : MonoBehaviour {
 
     public void ScrollLeft()
     {
-        int lastRight = rightIndex;
+        //int lastRight = rightIndex;
         roads[rightIndex].position = new Vector3(roads[leftIndex].position.x - bgSize, roads[leftIndex].position.y, roads[leftIndex].position.z);
         leftIndex = rightIndex;
         rightIndex--;
@@ -37,7 +37,7 @@ public class ParallaxFloor : MonoBehaviour {
 
     public void ScrollRight()
     {
-        int lastLeft = leftIndex;
+        //int lastLeft = leftIndex;
         roads[leftIndex].position = new Vector3(roads[rightIndex].position.x + bgSize, roads[leftIndex].position.y, roads[leftIndex].position.z)  ;
 
         rightIndex = leftIndex;
