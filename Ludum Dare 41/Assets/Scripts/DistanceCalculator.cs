@@ -34,7 +34,7 @@ public class DistanceCalculator : MonoBehaviour
 
         if (audioSource.isPlaying)
         {
-            distanceTravelled += Vector2.Distance(lastPos, playerCar.transform.position);
+            distanceTravelled += Vector2.Distance(lastPos, playerCar.transform.position) * playerCar.GetComponent<Rigidbody2D>().velocity.magnitude / Time.deltaTime;
         }
 
         if ((Math.Abs(audioSource.time - audioSource.clip.length) < 0.001) || Input.GetKeyDown(KeyCode.F3))    //F3 for DEBUG only
@@ -45,7 +45,7 @@ public class DistanceCalculator : MonoBehaviour
         }
 
 
-        simpleDist = ((int)(distanceTravelled)) / 1000;
+        simpleDist = ((int)(distanceTravelled)) / 1000000;
         distText.text = simpleDist.ToString();
 	}
 }
