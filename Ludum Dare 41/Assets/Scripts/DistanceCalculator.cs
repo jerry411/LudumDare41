@@ -20,7 +20,7 @@ public class DistanceCalculator : MonoBehaviour
 
     void Start ()
     {
-        playerCar = GameObject.FindGameObjectWithTag("Player");
+        
         lastPos = playerCar.transform.position;
 
         audioSource = mainSongSource.GetComponent<AudioSource>();
@@ -30,6 +30,8 @@ public class DistanceCalculator : MonoBehaviour
 	
 	void Update ()
     {
+        playerCar = GameObject.FindGameObjectWithTag("Player");
+
         if (audioSource.isPlaying)
         {
             distanceTravelled += Vector2.Distance(lastPos, playerCar.transform.position);
