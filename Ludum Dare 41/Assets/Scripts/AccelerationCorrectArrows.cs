@@ -19,6 +19,8 @@ public class AccelerationCorrectArrows : MonoBehaviour
     //bool aceleing;
     //bool deceilng;
 
+    public AudioSource boostSound;
+
     void Update ()
     {
 
@@ -98,6 +100,8 @@ public class AccelerationCorrectArrows : MonoBehaviour
 
     IEnumerator displayUi()
     {
+        boostSound.Play();
+
         boost.SetActive(true);
         yield return new WaitForSeconds(2f);
         boost.SetActive(false);
