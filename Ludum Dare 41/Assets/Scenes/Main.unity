@@ -2031,7 +2031,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &1104587420
 RectTransform:
@@ -3169,35 +3169,6 @@ Prefab:
     - target: {fileID: 224090533580160610, guid: 5a6966eb0511a564ab2911505d0fa156,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224679880410503156, guid: 5a6966eb0511a564ab2911505d0fa156,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224679880410503156, guid: 5a6966eb0511a564ab2911505d0fa156,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224574333616158508, guid: 5a6966eb0511a564ab2911505d0fa156,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224574333616158508, guid: 5a6966eb0511a564ab2911505d0fa156,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224574333616158508, guid: 5a6966eb0511a564ab2911505d0fa156,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128759996799626, guid: 5a6966eb0511a564ab2911505d0fa156, type: 2}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
