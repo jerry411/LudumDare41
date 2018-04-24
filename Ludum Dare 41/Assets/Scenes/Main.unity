@@ -566,12 +566,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 269137688}
---- !u!114 &270988256 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114377756342855136, guid: 5a6966eb0511a564ab2911505d0fa156,
-    type: 2}
-  m_PrefabInternal: {fileID: 1616461161}
-  m_Script: {fileID: 11500000, guid: 2c67f2278265f2240843962616f2fd23, type: 3}
 --- !u!1 &288305099 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1471194402239530, guid: c3782bfd0419ae349a6d1f5c9a2a1769,
@@ -2359,8 +2353,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 270988256}
-        m_MethodName: LoadLevel
+      - m_Target: {fileID: 1698861518}
+        m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
