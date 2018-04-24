@@ -13,8 +13,8 @@ public class UserSongManager : MonoBehaviour
 	[SerializeField] private GameObject canvasObj;
 
 	// Constants
-	private const string pathToMusicFolder = "../UserSongs/";
-	private const string wwwPathToMusicFolder = "../../../UserSongs/";
+	private const string pathToMusicFolder = "/UserSongs/";
+	private const string wwwPathToMusicFolder = "/UserSongs/";
 	private string[] possibleExtensions = new string[2] {"*.ogg", "*.wav"};
 	private const int mainSceneIndex = 2;
 
@@ -34,6 +34,7 @@ public class UserSongManager : MonoBehaviour
 	{
 		addCustomSongButtonsToList();
 		DisplayCustomsSongsInList();
+		Debug.Log(Application.persistentDataPath);
 	}
 	public void LoadCustomAudioClipWrapper(int index)
 	{
@@ -42,7 +43,7 @@ public class UserSongManager : MonoBehaviour
 	private IEnumerator LoadCustomAudioClip(int index)
 	{
 		HideUI();
-		string url = "file:///" + Application.dataPath + wwwPathToMusicFolder + fileNames[index];
+		string url = "file:///" + Application.persistentDataPath + wwwPathToMusicFolder + fileNames[index];
 		WWW audioClipPath = new WWW(url);
 
 		while(!audioClipPath.isDone)
@@ -62,7 +63,7 @@ public class UserSongManager : MonoBehaviour
 
 		for(int i = 0; i < possibleExtensions.Length; i++)
 		{
-			string[] tempFilePaths = Directory.GetFiles(pathToMusicFolder, possibleExtensions[i]);
+			string[] tempFilePaths = Directory.GetFiles(Application.persistentDataPath + pathToMusicFolder, possibleExtensions[i]);
 			filePaths = filePaths.Concat(tempFilePaths).ToArray();
 		}
 
