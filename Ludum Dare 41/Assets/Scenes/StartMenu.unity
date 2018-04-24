@@ -666,8 +666,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 223.1, y: 37.924988}
-  m_SizeDelta: {x: -545, y: 75.85}
+  m_AnchoredPosition: {x: 235.96, y: 22.59}
+  m_SizeDelta: {x: -519.28, y: 106.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &132518536
 MonoBehaviour:
@@ -701,8 +701,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You can choose predefined song or any other song  in .ogg or .wav format.
-    You add your song just by putting it into "UserSongs" folder.
+  m_Text: "You can choose predefined song or any other song  in .ogg or .wav format.
+    You add your song by putting it into: \n\n/Nautilus Studios/Bass Racer/UserSongs\n\n(inside
+    of wherever your os stores application\ndata, windows: appdata and mac: application
+    support)"
 --- !u!222 &132518537
 CanvasRenderer:
   m_ObjectHideFlags: 0
